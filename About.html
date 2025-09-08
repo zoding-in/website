@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoding Technologies - Smart, Scalable & Secure Software Solutions</title>
+    <meta name="description" content="Zoding Technologies is a leading software development company specializing in custom web, mobile, and AI solutions. We help businesses transform with cutting-edge technology.">
+    <meta name="keywords" content="software development, web development, mobile apps, AI, machine learning, cybersecurity, Zoding Technologies">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="main.css" /> 
+</head>
+<body class="text-gray-800">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-[#0A192F] flex flex-col items-center justify-center z-[200]">
+        <div id="preloader-animation-container" class="w-32 h-32 md:w-40 md:h-40 mb-4">
+            <!-- 3D Animation will be rendered here -->
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-white">Zoding Technologies</h1>
+        <p class="text-white text-lg mt-2">Loading Awesome...</p>
+    </div>
+
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="./video/Robot_Computer_Video_Ready.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Modals -->
+    <div id="project-modal" class="modal hidden opacity-0 fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] p-4">
+        <div class="bg-white p-6 md:p-8 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
+            <button id="close-project-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800"><i data-feather="x" class="w-8 h-8"></i></button>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div id="modal-media"></div>
+                <div>
+                    <h2 id="modal-title" class="text-3xl font-bold mb-4"></h2>
+                    <p id="modal-description" class="text-gray-600 mb-6"></p>
+                    <div class="space-y-4">
+                        <div><h3 class="font-bold text-lg">Problem</h3><p id="modal-problem"></p></div>
+                        <div><h3 class="font-bold text-lg">Solution</h3><p id="modal-solution"></p></div>
+                        <div><h3 class="font-bold text-lg text-green-600">Result</h3><p id="modal-result"></p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tech-modal" class="modal hidden opacity-0 fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] p-4">
+        <div class="bg-white p-6 md:p-8 rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative text-center">
+            <button id="close-tech-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800"><i data-feather="x" class="w-8 h-8"></i></button>
+            <img id="tech-modal-logo" src="" alt="Technology Logo" class="h-24 mx-auto mb-4">
+            <h2 id="tech-modal-title" class="text-3xl font-bold mb-4"></h2>
+            <p id="tech-modal-description" class="text-gray-600"></p>
+        </div>
+    </div>
+
+    <div id="service-modal" class="modal hidden opacity-0 scale-95 fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] p-4">
+        <div class="bg-white p-6 md:p-8 rounded-lg shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative text-center">
+            <button id="close-service-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800"><i data-feather="x" class="w-8 h-8"></i></button>
+            <div id="service-modal-icon" class="text-blue-600 mx-auto mb-4"></div>
+            <h2 id="service-modal-title" class="text-3xl font-bold mb-4"></h2>
+            <p id="service-modal-description" class="text-gray-600 mb-8"></p>
+            <button id="apply-service-btn" class="btn-gradient text-white px-6 py-3 rounded-md font-semibold transition transform hover:scale-105">Apply for this Service</button>
+        </div>
+    </div>
+    
+    <div id="product-modal" class="modal hidden opacity-0 scale-95 fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[100] p-4">
+        <div class="bg-white p-6 md:p-8 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto relative">
+            <button id="close-product-modal-btn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800"><i data-feather="x" class="w-8 h-8"></i></button>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div id="product-modal-media" class="rounded-lg overflow-hidden"></div>
+                <div>
+                    <h2 id="product-modal-title" class="text-3xl font-bold mb-2"></h2>
+                    <p id="product-modal-description" class="text-gray-600 mb-6"></p>
+                    <h3 class="font-bold text-lg mb-2">Key Features:</h3>
+                    <ul id="product-modal-features" class="list-disc list-inside space-y-2 text-gray-600"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- Header -->
+<header id="main-header" class="bg-gray-800/50 fixed top-0 left-0 right-0 z-50 rounded-lg transition-all duration-300">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#home" id="header-logo" class="flex items-center space-x-2 cursor-pointer z-20">
+        <img class="logo" src="./imeges/logo.png" alt="Zoding Logo" style="width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid #2563eb;">
+        <h1 class="text-2xl font-bold text-white">Zoding Technologies</h1>
+      </a>  
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-6">
+        <a href="Index.html" class="nav-link text-white hover:text-blue-600 active">Home</a>
+        <a href="about.html" class="nav-link text-white hover:text-blue-600">About</a>
+        <a href="services.html" class="nav-link text-white hover:text-blue-600">Services</a>
+        <a href="products.html" class="nav-link text-white hover:text-blue-600">Products</a>
+        <a href="careers.html" class="nav-link text-white hover:text-blue-600">Careers</a>
+        <a href="blog.html" class="nav-link text-white hover:text-blue-600">Blog</a>
+        <a href="contact.html" class="nav-link text-white hover:text-blue-600">Contact</a>
+      </nav>
+
+      <!-- Hamburger -->
+      <button id="mobile-menu-button" class="lg:hidden flex flex-col space-y-1 z-20">
+        <span class="hamburger-line block w-7 h-1 bg-gray-800 rounded transition-all duration-300"></span>
+        <span class="hamburger-line block w-7 h-1 bg-gray-800 rounded transition-all duration-300"></span>
+        <span class="hamburger-line block w-7 h-1 bg-gray-800 rounded transition-all duration-300"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden absolute top-0 left-0 w-full h-screen bg-white pt-24 px-6 pb-4 transition-all duration-500 ease-in-out transform -translate-y-full">
+    <a href="Index.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Home</a>
+    <a href="about.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">About</a>
+    <a href="services.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Services</a>
+    <a href="products.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Products</a>
+    <a href="careers.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Careers</a>
+    <a href="blog.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Blog</a>
+    <a href="contact.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Contact</a>
+  </div>
+</header>
+
+<script>
+  // Toggle Mobile Menu + Hamburger Animation
+  const menuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const lines = menuButton.querySelectorAll(".hamburger-line");
+
+  menuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.toggle("-translate-y-full");
+    mobileMenu.classList.toggle("translate-y-0");
+
+    // Animate hamburger → "X"
+    lines[0].classList.toggle("rotate-45");
+    lines[0].classList.toggle("translate-y-2");
+    lines[1].classList.toggle("opacity-0");
+    lines[2].classList.toggle("-rotate-45");
+    lines[2].classList.toggle("-translate-y-2");
+  });
+</script>
+
+<style>
+  /* Smooth Hamburger Animation */
+  .rotate-45 { transform: rotate(45deg); }
+  .-rotate-45 { transform: rotate(-45deg); }
+  .translate-y-2 { transform: translateY(8px); }
+  .-translate-y-2 { transform: translateY(-8px); }  
+</style>
+    <main>
+        <section class="content-section bg-white/50 ">
+            <div class="container mx-auto">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 g-fade-in">About Zoding Technologies</h2>
+                    <p class="text-xl text-gray-600 mb-12 g-fade-in">At Zoding Technologies, we are passionate about technology and innovation. Our mission is to create software solutions that are scalable, user-friendly, and future-ready. With a team of experienced developers, designers, and consultants, we deliver results that drive business growth.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="g-fade-in"><img src="https://placehold.co/600x400/60A5FA/FFFFFF?text=Our+Team" alt="Our Team" class="rounded-lg shadow-lg w-full"></div>
+                    <div class="g-fade-in">
+                        <div class="mb-6"><h3 class="text-2xl font-bold text-gray-900">Mission</h3><p class="text-lg text-gray-600">We aim to become your complete web development solution partner, through the most eligible developers, technical knack and innovation.</p></div>
+                        <div><h3 class="text-2xl font-bold text-gray-900">Vision</h3><p class="text-lg text-gray-600">At CSSChopper, we envision becoming an industry leader by delivering innovative and unmatched solutions to clients through our expertise and knowledgeable resources.</p></div>
+                    </div>
+                </div>
+                <div class="mt-24">
+                    <div class="text-center mb-12"><h2 class="text-4xl font-bold g-fade-in">Leadership Team</h2></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="text-center p-6 bg-white rounded-lg shadow-md interactive-card g-fade-in"><img class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4" src="https://placehold.co/200x200/E5E7EB/4B5563?text=CEO" alt="Founder & CEO"><h3 class="text-xl font-bold">Priya Sharma</h3><p class="text-blue-600 font-semibold">Founder & CEO</p></div>
+                        <div class="text-center p-6 bg-white rounded-lg shadow-md interactive-card g-fade-in"><img class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4" src="https://placehold.co/200x200/E5E7EB/4B5563?text=CTO" alt="CTO"><h3 class="text-xl font-bold">Rohan Mehta</h3><p class="text-blue-600 font-semibold">Chief Technology Officer</p></div>
+                        <div class="text-center p-6 bg-white rounded-lg shadow-md interactive-card g-fade-in sm:col-span-2 lg:col-span-1"><img class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4" src="https://placehold.co/200x200/E5E7EB/4B5563?text=COO" alt="COO"><h3 class="text-xl font-bold">Anjali Desai</h3><p class="text-blue-600 font-semibold">Chief Operating Officer</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <footer class="bg-gray-800/60 text-gray-300 rounded-xl py-12 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div><h3 class="text-lg font-bold text-white mb-4">Quick Links</h3><ul class="space-y-2"><li class="hover:text-white"><a href="#home">Home</a></li><li class="hover:text-white"><a href="#about">About</a></li><li class="hover:text-white"><a href="#services">Services</a></li><li class="hover:text-white"><a href="#careers">Careers</a></li><li class="hover:text-white"><a href="#blog">Blog</a></li><li class="hover:text-white"><a href="#contact">Contact</a></li></ul></div>
+                <div><h3 class="text-lg font-bold text-white mb-4">Follow Us</h3><div class="flex space-x-4"><a href="#" class="hover:text-white"><i data-feather="linkedin"></i></a><a href="#" class="hover:text-white"><i data-feather="instagram"></i></a></div></div>
+                <div class="md:col-span-2"><h3 class="text-lg font-bold text-white mb-4">Subscribe to our Newsletter</h3><p class="mb-4">Subscribe to get the latest tech updates.</p><form class="flex"><input type="email" placeholder="Your Email" class="w-full p-2 rounded-l-md text-gray-800"><button type="submit" class="btn-gradient text-white px-4 py-2 rounded-r-md">Subscribe</button></form></div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-sm"><p>&copy; 2025 Zoding Technologies. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+        let preloaderAnimationId;
+
+        function setupPreloaderAnimation() {
+            const container = document.getElementById('preloader-animation-container');
+            if (!container) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            const geometry = new THREE.IcosahedronGeometry(2.5, 0);
+            const material = new THREE.MeshBasicMaterial({ color: 0x60a5fa, wireframe: true });
+            const icosahedron = new THREE.Mesh(geometry, material);
+            scene.add(icosahedron);
+
+            camera.position.z = 6;
+
+            function animate() {
+                preloaderAnimationId = requestAnimationFrame(animate);
+                icosahedron.rotation.x += 0.005;
+                icosahedron.rotation.y += 0.005;
+                renderer.render(scene, camera);
+            }
+            animate();
+            
+            window.addEventListener('resize', () => {
+                const width = container.clientWidth;
+                const height = container.clientHeight;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+            });
+        }
+
+        setupPreloaderAnimation();
+
+        // --- MOCK DATA ---
+        const projectsData = [
+            { id: 1, title: 'E-Commerce Platform', description: 'A custom, cloud-native e-commerce platform built for a retail giant to handle massive traffic and complex inventory.', mediaType: 'image', mediaUrl: 'https://placehold.co/600x800/3B82F6/FFFFFF?text=E-Commerce', problem: 'Client needed a highly scalable online store capable of handling massive traffic.', solution: 'We built a custom platform with secure payments and a personalized recommendation engine.', result: 'Achieved a 45% increase in sales within the first 6 months.' },
+            { id: 2, title: 'AI-Powered Healthcare App', description: 'A HIPAA-compliant mobile app with an AI-powered scheduling assistant and encrypted patient data storage.', mediaType: 'video', mediaUrl: 'https://cdn.pixabay.com/video/2021/09/29/88856-612112955.mp4', problem: 'A network of clinics required a solution for real-time appointment scheduling.', solution: 'We developed a mobile app with an AI-powered scheduling assistant.', result: 'Improved appointment scheduling efficiency by 60%.' },
+            { id: 3, title: 'Fintech Dashboard', description: 'A data visualization dashboard for a financial services company to track market trends.', mediaType: 'image', mediaUrl: 'https://placehold.co/600x800/10B981/FFFFFF?text=Fintech+Dashboard', problem: 'Client needed a way to visualize complex financial data in real-time.', solution: 'A web-based dashboard with interactive charts and graphs.', result: 'Reduced data analysis time by 70% for financial analysts.' }
+        ];
+
+        const technologiesData = [
+            { id: 1, name: 'React', category: 'Frontend', logo: 'https://img.icons8.com/color/96/000000/react-native.png', description: 'A JavaScript library for building user interfaces, maintained by Meta and a community of individual developers and companies.' },
+            { id: 11, name: 'TypeScript', category: 'Frontend', logo: 'https://img.icons8.com/color/96/000000/typescript.png', description: 'A strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.' },
+            { id: 4, name: 'Node.js', category: 'Backend', logo: 'https://img.icons8.com/color/96/000000/nodejs.png', description: 'A back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.' },
+            { id: 5, name: 'Python', category: 'Backend', logo: 'https://img.icons8.com/color/96/000000/python--v1.png', description: 'A high-level, general-purpose programming language known for its simple, easy-to-read syntax.' },
+            { id: 12, name: 'Java', category: 'Backend', logo: 'https://img.icons8.com/color/96/000000/java-coffee-cup-logo.png', description: 'A high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.' },
+            { id: 6, name: 'MongoDB', category: 'Database', logo: 'https://img.icons8.com/color/96/000000/mongodb.png', description: 'A source-available cross-platform document-oriented database program. Classified as a NoSQL database program.' },
+            { id: 7, name: 'PostgreSQL', category: 'Database', logo: 'https://img.icons8.com/color/96/000000/postgreesql.png', description: 'A free and open-source relational database management system emphasizing extensibility and SQL compliance.' },
+            { id: 17, name: 'Swift', category: 'Mobile', logo: 'https://img.icons8.com/color/96/000000/swift.png', description: 'A powerful and intuitive programming language for iOS, iPadOS, macOS, watchOS, and tvOS.' },
+            { id: 18, name: 'Kotlin', category: 'Mobile', logo: 'https://img.icons8.com/color/96/000000/kotlin.png', description: 'A cross-platform, statically typed, general-purpose programming language with type inference.' },
+            { id: 19, name: 'Flutter', category: 'Mobile', logo: 'https://img.icons8.com/color/96/000000/flutter.png', description: 'An open-source UI software development kit created by Google for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.'},
+            { id: 20, name: 'AWS', category: 'Cloud & DevOps', logo: 'https://img.icons8.com/color/96/000000/amazon-web-services.png', description: 'Amazon Web Services offers reliable, scalable, and inexpensive cloud computing services.' },
+            { id: 21, name: 'Google Cloud', category: 'Cloud & DevOps', logo: 'https://img.icons8.com/color/96/000000/google-cloud.png', description: 'A suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products.' },
+            { id: 23, name: 'Docker', category: 'Cloud & DevOps', logo: 'https://img.icons8.com/color/96/000000/docker.png', description: 'A set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.' },
+            { id: 24, name: 'Kubernetes', category: 'Cloud & DevOps', logo: 'https://img.icons8.com/color/96/000000/kubernetes.png', description: 'An open-source container orchestration system for automating software deployment, scaling, and management.' },
+            { id: 9, name: 'WordPress', category: 'CMS & E-commerce', logo: 'https://img.icons8.com/color/96/000000/wordpress.png', description: 'A free and open-source content management system written in PHP and paired with a MySQL or MariaDB database.' },
+            { id: 10, name: 'Shopify', category: 'CMS & E-commerce', logo: 'https://img.icons8.com/color/96/000000/shopify.png', description: 'A proprietary e-commerce platform for online stores and retail point-of-sale systems.' }
+        ];
+        
+        const servicesData = [
+            { id: 'custom-software', title: 'Custom Software Development', icon: 'codepen', imageUrl: 'https://placehold.co/400x300/3B82F6/FFFFFF?text=Custom+Software', full_desc: 'We specialize in creating bespoke software solutions that are perfectly aligned with your business processes. From concept to deployment, our team works closely with you to build robust, scalable, and secure applications that provide a competitive edge.' },
+            { id: 'web-dev', title: 'Web Development', icon: 'globe', imageUrl: 'https://placehold.co/400x300/10B981/FFFFFF?text=Web+Dev', full_desc: 'We build high-performance web applications that deliver a seamless user experience across all devices. Using modern frameworks like React and Node.js, we create scalable solutions that drive engagement and conversions.' },
+            { id: 'mobile-dev', title: 'Mobile App Development', icon: 'smartphone', imageUrl: 'https://placehold.co/400x300/F59E0B/FFFFFF?text=Mobile+Apps', full_desc: 'From native iOS and Android apps to cross-platform solutions with Flutter, we create mobile experiences that are intuitive, engaging, and performant. We handle the entire lifecycle, from UI/UX design to App Store submission.' },
+            { id: 'cloud-devops', title: 'Cloud & DevOps', icon: 'cloud', imageUrl: 'https://placehold.co/400x300/6366F1/FFFFFF?text=Cloud', full_desc: 'Leverage the power of the cloud with our expert DevOps services. We help you with cloud migration, CI/CD pipeline automation, and infrastructure management on platforms like AWS and Google Cloud to ensure scalability and reliability.' },
+            { id: 'ai-ml', title: 'AI & Machine Learning', icon: 'cpu', imageUrl: 'https://placehold.co/400x300/EC4899/FFFFFF?text=AI+%26+ML', full_desc: 'Unlock the potential of your data with our AI and Machine Learning services. We build intelligent systems for predictive analytics, natural language processing, and computer vision to automate processes and derive actionable insights.' },
+            { id: 'ui-ux', title: 'UI/UX Design', icon: 'pen-tool', imageUrl: 'https://placehold.co/400x300/8B5CF6/FFFFFF?text=UI/UX', full_desc: 'Our design team creates beautiful, user-centric interfaces that are both aesthetically pleasing and highly functional. We focus on creating intuitive user journeys that enhance satisfaction and drive user adoption.' },
+            { id: 'cybersecurity', title: 'Cybersecurity Solutions', icon: 'shield', imageUrl: 'https://placehold.co/400x300/EF4444/FFFFFF?text=Security', full_desc: 'Safeguard your digital assets with our comprehensive cybersecurity services. We offer vulnerability assessments, penetration testing, and security architecture design to protect your applications and infrastructure from modern threats.' },
+            { id: 'it-consulting', title: 'IT Consulting', icon: 'users', imageUrl: 'https://placehold.co/400x300/F97316/FFFFFF?text=Consulting', full_desc: 'Navigate the complexities of digital transformation with our expert IT consulting. We provide strategic guidance on technology adoption, process optimization, and IT infrastructure to help you achieve your business goals.' }
+        ];
+
+        const productsData = [
+            { id: 1, name: 'PayrollPro Suite', short_desc: 'Automate salaries, tax, and compliance.', imageUrl: 'https://placehold.co/600x400/6366F1/FFFFFF?text=PayrollPro', videoUrl: 'https://cdn.pixabay.com/video/2020/03/17/33333-403426161.mp4', full_desc: 'Our comprehensive Payroll Management System simplifies and automates your entire payroll process. From calculating salaries and deductions to generating payslips and ensuring tax compliance, our solution is designed to be secure, accurate, and incredibly user-friendly.', features: ['Automated Salary Calculations', 'Tax Compliance Engine', 'Employee Self-Service Portal', 'Detailed Reporting & Analytics', 'Leave Management Integration'] },
+            { id: 2, name: 'FoodFlow AI', short_desc: 'Reduce wastage and optimize food distribution.', imageUrl: 'https://placehold.co/600x400/10B981/FFFFFF?text=FoodFlow', videoUrl: null, full_desc: 'Revolutionize your food supply chain with our Smart Food Management System. Leveraging AI and IoT, this platform optimizes inventory, reduces wastage, and ensures transparent distribution from source to consumer. Ideal for restaurants, hotels, and large-scale food businesses.', features: ['Real-time Inventory Tracking', 'AI-powered Demand Forecasting', 'Wastage Reduction Analytics', 'Supply Chain Transparency', 'Automated Ordering System'] },
+            { id: 3, name: 'Attendly Dashboard', short_desc: 'Real-time attendance with analytics.', imageUrl: 'https://placehold.co/600x400/F59E0B/FFFFFF?text=Attendly', videoUrl: 'https://cdn.pixabay.com/video/2023/07/22/173907-848443229.mp4', full_desc: 'Monitor your workforce with our intuitive, real-time Attendance Dashboard. Integrate with various biometric and mobile check-in systems to get live updates, generate insightful reports, and manage leave requests seamlessly. Simplify your HR tasks and boost productivity.', features: ['Live Attendance Tracking', 'Customizable Reports', 'Leave Management Integration', 'Mobile Check-in Capability', 'Shift Scheduling'] },
+            { id: 4, name: 'CyberSecure Shield', short_desc: 'Proactive threat detection and response.', imageUrl: 'https://placehold.co/600x400/EF4444/FFFFFF?text=CyberSecure', videoUrl: null, full_desc: 'Protect your digital infrastructure with CyberSecure Shield. Our platform offers 24/7 monitoring, AI-driven threat detection, and automated response capabilities to safeguard your business against evolving cyber threats. Stay one step ahead of attackers with our comprehensive security solution.', features: ['AI-Powered Threat Intelligence', '24/7 Network Monitoring', 'Automated Incident Response', 'Vulnerability Scanning', 'Compliance Reporting'] },
+            { id: 5, name: 'LearnSphere LMS', short_desc: 'Next-gen Learning Management System.', imageUrl: 'https://placehold.co/600x400/8B5CF6/FFFFFF?text=LearnSphere', videoUrl: 'https://cdn.pixabay.com/video/2024/04/16/208310-932649646.mp4', full_desc: 'Transform your educational and corporate training programs with LearnSphere, a modern Learning Management System. Deliver engaging courses, track progress with advanced analytics, and foster a collaborative learning environment with our intuitive and scalable platform.', features: ['Interactive Course Builder', 'Advanced Analytics & Reporting', 'Gamification Elements', 'Mobile Learning Support', 'Social Learning Forums'] },
+            { id: 6, name: 'E-Com Boost', short_desc: 'All-in-one e-commerce optimization suite.', imageUrl: 'https://placehold.co/600x400/F97316/FFFFFF?text=E-Com+Boost', videoUrl: null, full_desc: 'Supercharge your online store with E-Com Boost. This suite of tools provides AI-powered product recommendations, automated marketing campaigns, and advanced sales analytics to help you increase conversions and maximize revenue.', features: ['AI Recommendation Engine', 'Automated Email & SMS Marketing', 'Customer Segmentation', 'Sales & Conversion Analytics', 'A/B Testing Framework'] }
+        ];
+
+        function initializeApp() {
+            setupUI();
+            handleNavigation();
+            
+            // Header Logo Animation
+            gsap.from("#header-logo", {
+                duration: 0.8,
+                opacity: 0,
+                y: -30,
+                ease: 'power2.out',
+                delay: 0.2 // A little delay after page load
+            });
+        }
+
+        function setupUI() {
+            feather.replace();
+            runGsapAnimations();
+            setupMobileMenu();
+            setupHeaderScroll();
+            setupInteractiveCards();
+            setup3dSlider();
+            setupProjectModal();
+            setupTechSection();
+            setupServicesSection();
+            setupProductsSection();
+            setupFab();
+            setupContactPopup();
+            setupBannerSlider();
+        }
+        
+        function setupContactPopup() {
+            const popup = document.getElementById('contact-popup');
+            const closeBtn = document.getElementById('close-contact-popup');
+            if (!sessionStorage.getItem('popupShown')) {
+                setTimeout(() => {
+                    openModal(popup);
+                    sessionStorage.setItem('popupShown', 'true');
+                }, 5000);
+            }
+            closeBtn.addEventListener('click', () => closeModal(popup));
+        }
+        
+        function setupFab() {
+            const fabMain = document.getElementById('fab-main');
+            const fabOptions = document.getElementById('fab-options');
+            fabMain.addEventListener('click', () => {
+                const isHidden = fabOptions.classList.contains('opacity-0');
+                if (isHidden) {
+                    fabOptions.classList.remove('opacity-0', '-translate-y-4');
+                } else {
+                    fabOptions.classList.add('opacity-0', '-translate-y-4');
+                }
+            });
+        }
+
+        function setupMobileMenu() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuLinks = document.querySelectorAll('#mobile-menu a');
+            let menuOpen = false;
+            
+            gsap.set(mobileMenu, { y: '-100%' });
+            gsap.set(menuLinks, { opacity: 0, y: 20 });
+            
+            mobileMenuButton.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                mobileMenuButton.classList.toggle('open');
+                
+                if (menuOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    gsap.to(mobileMenu, { y: '0%', duration: 0.5, ease: 'power3.out' });
+                    gsap.to(menuLinks, { opacity: 1, y: 0, duration: 0.4, stagger: 0.05, delay: 0.2 });
+                } else {
+                    gsap.to(mobileMenu, { y: '-100%', duration: 0.5, ease: 'power3.in', onComplete: () => {
+                        mobileMenu.classList.add('hidden');
+                        gsap.set(menuLinks, { opacity: 0, y: 20 }); // Reset for next open
+                    }});
+                }
+            });
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuOpen = false;
+                    mobileMenuButton.classList.remove('open');
+                    gsap.to(mobileMenu, { y: '-100%', duration: 0.5, ease: 'power3.in', onComplete: () => {
+                        mobileMenu.classList.add('hidden');
+                         gsap.set(menuLinks, { opacity: 0, y: 20 });
+                    }});
+                });
+            });
+        }
+        
+        function setupHeaderScroll() {
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            });
+        }
+
+        function handleNavigation() {
+            const navLinks = document.querySelectorAll('.nav-link, #mobile-menu a, a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        navigateTo(href.substring(1));
+                    }
+                });
+            });
+        }
+
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden'));
+            const targetPage = document.getElementById(pageId) || document.getElementById('home');
+            targetPage.classList.remove('hidden');
+            gsap.to(window, {duration: 1, scrollTo: {y: `#${pageId}`, offsetY: 80}, ease: "power2.inOut"});
+            updateActiveNav(pageId);
+        }
+
+        function updateActiveNav(activeId) {
+             document.querySelectorAll('.nav-link').forEach(l => {
+                l.classList.toggle('active', l.getAttribute('href') === `#${activeId}`);
+            });
+        }
+        
+        const sections = document.querySelectorAll('.page-content');
+        ScrollTrigger.create({
+            trigger: "main",
+            start: "top top",
+            end: "bottom bottom",
+            onUpdate: self => {
+                let current = 'home';
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                       current = section.id;
+                    }
+                });
+                updateActiveNav(current);
+            }
+        });
+
+        function runGsapAnimations() {
+            gsap.utils.toArray('.g-fade-in').forEach((elem) => {
+                gsap.fromTo(elem, 
+                    { opacity: 0, y: 50 }, 
+                    { opacity: 1, y: 0, duration: 0.8, stagger: 0.1,
+                      scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none' } 
+                    }
+                );
+            });
+        }
+
+        function setupInteractiveCards() {
+            const cards = document.querySelectorAll('.interactive-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const rotateX = (y / rect.height - 0.5) * -15;
+                    const rotateY = (x / rect.width - 0.5) * 15;
+                    gsap.to(card, { duration: 0.5, rotationX: rotateX, rotationY: rotateY, scale: 1.05, boxShadow: "0px 15px 30px rgba(59, 130, 246, 0.2)", ease: "power2.out" });
+                });
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, { duration: 0.5, rotationX: 0, rotationY: 0, scale: 1, boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)", ease: "power2.out" });
+                });
+            });
+        }
+
+        function setup3dSlider() {
+            const sliderWrapper = document.getElementById('home-projects-slider');
+            projectsData.forEach(p => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide swiper-slide-3d';
+                slide.dataset.projectId = p.id;
+
+                if (p.mediaType === 'video') {
+                    slide.innerHTML = `<video autoplay loop muted playsinline><source src="${p.mediaUrl}" type="video/mp4"></video>`;
+                } else {
+                    slide.style.backgroundImage = `url(${p.mediaUrl})`;
+                }
+                sliderWrapper.appendChild(slide);
+            });
+
+            new Swiper('.swiper-container-3d', {
+                effect: 'coverflow', grabCursor: true, centeredSlides: true, slidesPerView: 'auto', loop: true,
+                autoplay: { delay: 3000, disableOnInteraction: false },
+                coverflowEffect: { rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true, },
+                pagination: { el: '.swiper-pagination', clickable: true },
+            });
+        }
+        
+        function openModal(modal) {
+            modal.classList.remove('hidden');
+            gsap.fromTo(modal, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.3, ease: 'power2.out' });
+        }
+        
+        function closeModal(modal) {
+            gsap.to(modal, { opacity: 0, scale: 0.95, duration: 0.3, ease: 'power2.in', onComplete: () => modal.classList.add('hidden') });
+        }
+
+        function setupProjectModal() {
+            const modal = document.getElementById('project-modal');
+            document.getElementById('home-projects-slider').addEventListener('click', (e) => {
+                const slide = e.target.closest('.swiper-slide-3d');
+                if (slide && slide.dataset.projectId) {
+                    const project = projectsData.find(p => p.id == slide.dataset.projectId);
+                    if (project) openProjectModal(project);
+                }
+            });
+            document.getElementById('close-project-modal-btn').addEventListener('click', () => closeModal(modal));
+            modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(modal); });
+        }
+
+        function openProjectModal(project) {
+            document.getElementById('modal-title').textContent = project.title;
+            document.getElementById('modal-description').textContent = project.description;
+            document.getElementById('modal-problem').textContent = project.problem;
+            document.getElementById('modal-solution').textContent = project.solution;
+            document.getElementById('modal-result').textContent = project.result;
+            
+            const mediaContainer = document.getElementById('modal-media');
+            if(project.mediaType === 'video') {
+                mediaContainer.innerHTML = `<video class="w-full rounded-lg" controls autoplay loop muted><source src="${project.mediaUrl}" type="video/mp4"></video>`;
+            } else {
+                mediaContainer.innerHTML = `<img src="${project.mediaUrl.replace('800','400')}" alt="${project.title}" class="w-full rounded-lg shadow-lg">`;
+            }
+            openModal(document.getElementById('project-modal'));
+        }
+
+        function setupTechSection() {
+            const tabsContainer = document.getElementById('tech-tabs');
+            const gridContainer = document.getElementById('tech-grid');
+            const categories = ['All', ...new Set(technologiesData.map(t => t.category))];
+
+            categories.forEach(cat => {
+                const tab = document.createElement('button');
+                tab.className = 'tech-tab';
+                tab.textContent = cat;
+                tab.dataset.category = cat;
+                if (cat === 'All') tab.classList.add('active');
+                tabsContainer.appendChild(tab);
+            });
+
+            tabsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('tech-tab')) {
+                    tabsContainer.querySelector('.active').classList.remove('active');
+                    e.target.classList.add('active');
+                    renderTechCards(e.target.dataset.category);
+                }
+            });
+            
+            gridContainer.addEventListener('click', e => {
+                const card = e.target.closest('.tech-card');
+                if(card) {
+                    const tech = technologiesData.find(t => t.id == card.dataset.techId);
+                    if(tech) openTechModal(tech);
+                }
+            });
+            
+            const techModal = document.getElementById('tech-modal');
+            document.getElementById('close-tech-modal-btn').addEventListener('click', () => closeModal(techModal));
+            techModal.addEventListener('click', e => { if(e.target.id === 'tech-modal') closeModal(techModal); });
+
+            renderTechCards('All');
+        }
+
+        function renderTechCards(category) {
+            const gridContainer = document.getElementById('tech-grid');
+            gridContainer.innerHTML = '';
+            const filteredTech = category === 'All' ? technologiesData : technologiesData.filter(t => t.category === category);
+            
+            filteredTech.forEach(tech => {
+                const card = document.createElement('button');
+                card.className = 'text-center p-4 bg-white rounded-lg shadow-md interactive-card tech-card cursor-pointer';
+                card.dataset.techId = tech.id;
+                card.innerHTML = `<img src="${tech.logo}" alt="${tech.name}" class="h-16 mx-auto mb-2 pointer-events-none"><p class="font-semibold pointer-events-none">${tech.name}</p>`;
+                gridContainer.appendChild(card);
+            });
+            
+            gsap.fromTo("#tech-grid .tech-card", {opacity: 0, y: 20}, {opacity: 1, y: 0, stagger: 0.05, duration: 0.5});
+            setupInteractiveCards(); // Re-apply effects to new cards
+        }
+
+        function openTechModal(tech) {
+            document.getElementById('tech-modal-logo').src = tech.logo;
+            document.getElementById('tech-modal-title').textContent = tech.name;
+            document.getElementById('tech-modal-description').textContent = tech.description;
+            openModal(document.getElementById('tech-modal'));
+        }
+
+        function setupServicesSection() {
+            const grid = document.getElementById('services-grid');
+            if (!grid) return;
+
+            servicesData.forEach(service => {
+                const card = document.createElement('div');
+                card.className = 'group service-card bg-white rounded-lg shadow-md text-left interactive-card overflow-hidden';
+                card.dataset.serviceId = service.id;
+                card.innerHTML = `
+                    <div class="relative h-48">
+                        <img src="${service.imageUrl}" alt="${service.title}" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/50"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="inline-block bg-blue-100 text-blue-600 rounded-full p-3 -mt-12 mb-4 relative z-10 shadow-md">
+                            <i data-feather="${service.icon}" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">${service.title}</h3>
+                        <p class="text-gray-600">Click to see details</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            feather.replace();
+            
+            gsap.fromTo("#services-grid .interactive-card", 
+                { opacity: 0, y: 50 }, 
+                { opacity: 1, y: 0, duration: 0.5, stagger: 0.1,
+                  scrollTrigger: { trigger: "#services-grid", start: 'top 80%' }
+                }
+            );
+
+            setupInteractiveCards();
+
+            const modal = document.getElementById('service-modal');
+            grid.addEventListener('click', (e) => {
+                const card = e.target.closest('.interactive-card');
+                if (card && card.dataset.serviceId) {
+                    const service = servicesData.find(s => s.id === card.dataset.serviceId);
+                    if (service) openServiceModal(service);
+                }
+            });
+
+            document.getElementById('close-service-modal-btn').addEventListener('click', () => closeModal(modal));
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal); });
+        }
+        
+        function setupProductsSection() {
+            const grid = document.getElementById('products-grid');
+            if (!grid) return;
+
+            productsData.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'group product-card bg-white rounded-lg shadow-md text-center interactive-card';
+                card.dataset.productId = product.id;
+                card.innerHTML = `
+                    <div class="relative h-56 overflow-hidden rounded-t-lg">
+                        <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/40 transition-opacity group-hover:bg-black/60"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span class="text-white font-semibold border-2 border-white rounded-full px-4 py-2">View Details</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">${product.name}</h3>
+                        <p class="text-gray-600">${product.short_desc}</p>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            gsap.fromTo("#products-grid .interactive-card", 
+                { opacity: 0, y: 50 }, 
+                { opacity: 1, y: 0, duration: 0.5, stagger: 0.1,
+                  scrollTrigger: { trigger: "#products-grid", start: 'top 80%' }
+                }
+            );
+
+            setupInteractiveCards();
+
+            const modal = document.getElementById('product-modal');
+            grid.addEventListener('click', (e) => {
+                const card = e.target.closest('.interactive-card');
+                if (card && card.dataset.productId) {
+                    const product = productsData.find(p => p.id == card.dataset.productId);
+                    if (product) openProductModal(product);
+                }
+            });
+
+            document.getElementById('close-product-modal-btn').addEventListener('click', () => closeModal(modal));
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal); });
+        }
+        
+        function openProductModal(product) {
+            const modal = document.getElementById('product-modal');
+            modal.querySelector('#product-modal-title').textContent = product.name;
+            modal.querySelector('#product-modal-description').textContent = product.full_desc;
+            
+            const mediaContainer = modal.querySelector('#product-modal-media');
+            if(product.videoUrl) {
+                mediaContainer.innerHTML = `<video class="w-full rounded-lg" controls autoplay loop muted><source src="${product.videoUrl}" type="video/mp4"></video>`;
+            } else {
+                mediaContainer.innerHTML = `<img src="${product.imageUrl}" alt="${product.name}" class="w-full rounded-lg shadow-lg">`;
+            }
+            
+            const featuresList = modal.querySelector('#product-modal-features');
+            featuresList.innerHTML = '';
+            product.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+
+            feather.replace();
+            openModal(modal);
+        }
+
+        function openServiceModal(service) {
+            const modal = document.getElementById('service-modal');
+            modal.querySelector('#service-modal-icon').innerHTML = `<i data-feather="${service.icon}" class="w-12 h-12"></i>`;
+            modal.querySelector('#service-modal-title').textContent = service.title;
+            modal.querySelector('#service-modal-description').textContent = service.full_desc;
+            
+            const applyBtn = modal.querySelector('#apply-service-btn');
+            applyBtn.onclick = () => {
+                closeModal(modal);
+                navigateTo('contact');
+            };
+
+            feather.replace();
+            openModal(modal);
+        }
+        
+        function setupBannerSlider() {
+            const bannerSwiper = new Swiper('.swiper-container-banner', {
+                loop: true,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination-banner',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next-banner',
+                    prevEl: '.swiper-button-prev-banner',
+                },
+                on: {
+                    init: function () {
+                        // Animate first slide
+                        const activeSlide = this.slides[this.activeIndex];
+                        const title = activeSlide.querySelector('.banner-title');
+                        const desc = activeSlide.querySelector('.banner-description');
+                        const btn = activeSlide.querySelector('.banner-button');
+                        if (title) gsap.from(title, { opacity: 0, y: 20, duration: 0.8, delay: 0.3 });
+                        if (desc) gsap.from(desc, { opacity: 0, y: 20, duration: 0.8, delay: 0.5 });
+                        if (btn) gsap.from(btn, { opacity: 0, y: 20, duration: 0.8, delay: 0.7 });
+                    },
+                    slideChangeTransitionStart: function () {
+                        // Animate incoming slide
+                        const allContent = this.el.querySelectorAll('.banner-title, .banner-description, .banner-button');
+                        gsap.set(allContent, { opacity: 0, y: 20 });
+                        
+                        const activeSlide = this.slides[this.activeIndex];
+                        const title = activeSlide.querySelector('.banner-title');
+                        const desc = activeSlide.querySelector('.banner-description');
+                        const btn = activeSlide.querySelector('.banner-button');
+                         
+                        if (title) gsap.to(title, { opacity: 1, y: 0, duration: 0.8, delay: 0.4 });
+                        if (desc) gsap.to(desc, { opacity: 1, y: 0, duration: 0.8, delay: 0.6 });
+                        if (btn) gsap.to(btn, { opacity: 1, y: 0, duration: 0.8, delay: 0.8 });
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            gsap.to(preloader, {
+                duration: 1,
+                opacity: 0,
+                delay: 0.5,
+                ease: "power2.inOut",
+                onComplete: () => {
+                    preloader.style.display = 'none';
+                    if (preloaderAnimationId) {
+                        cancelAnimationFrame(preloaderAnimationId);
+                    }
+                    initializeApp();
+                }
+            });
+        });
+        
+    });
+    </script>
+</body>
+</html>
+
+
