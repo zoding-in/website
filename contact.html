@@ -23,13 +23,14 @@
 <body class="text-gray-800">
 
     <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 bg-[#0A192F] flex flex-col items-center justify-center z-[200]">
+    <div id="preloader" class="fixed inset-0 bg-black/90 flex flex-col items-center justify-center z-[200]">
         <div id="preloader-animation-container" class="w-32 h-32 md:w-40 md:h-40 mb-4">
             <!-- 3D Animation will be rendered here -->
         </div>
         <h1 class="text-3xl md:text-4xl font-bold text-white">Zoding Technologies</h1>
         <p class="text-white text-lg mt-2">Loading Awesome...</p>
     </div>
+
 
     <video autoplay loop muted playsinline id="bg-video">
         <source src="./video/Robot_Computer_Video_Ready.mp4" type="video/mp4">
@@ -99,13 +100,12 @@
 
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center space-x-6">
-        <a href="Index.html" class="nav-link text-white hover:text-blue-600 active">Home</a>
+        <a href="Index.html" class="nav-link text-white hover:text-blue-600 ">Home</a>
         <a href="about.html" class="nav-link text-white hover:text-blue-600">About</a>
         <a href="services.html" class="nav-link text-white hover:text-blue-600">Services</a>
         <a href="products.html" class="nav-link text-white hover:text-blue-600">Products</a>
         <a href="careers.html" class="nav-link text-white hover:text-blue-600">Careers</a>
-        <a href="blog.html" class="nav-link text-white hover:text-blue-600">Blog</a>
-        <a href="contact.html" class="nav-link text-white hover:text-blue-600">Contact</a>
+        <a href="contact.html" class="nav-link text-white hover:text-blue-600 active">Contact</a>
       </nav>
 
       <!-- Hamburger -->
@@ -124,7 +124,6 @@
     <a href="services.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Services</a>
     <a href="products.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Products</a>
     <a href="careers.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Careers</a>
-    <a href="blog.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Blog</a>
     <a href="contact.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Contact</a>
   </div>
 </header>
@@ -163,12 +162,55 @@
                 <div class="text-center mb-12"><h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 g-fade-in">Contact Us</h2></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div  class="g-fade-in bg-white/50 p-8 rounded-lg shadow-md">
-                        <center><h3 class="text-2xl font-bold mb-4">Get in Touch</h3></center>
-                        <p class="mb-4 text-lg"><strong>Phone:</strong> +91-6374085915</p>
+                        <center><h3 class="text-3xl font-bold mb-4">Get in Touch</h3></center>
+                        <p class="mb-4 text-lg"><strong>Phone:</strong> +91-9003140198</p>
                         <p class="mb-4 text-lg"><strong>Email:</strong> Zoding@gmail.com</p>
                         <p class="text-lg"><strong>Address:</strong> Coimbatore, India</p>
+                        <!-- Google Map Section -->
+<section >
+  <div class="container mx-auto px-2 text-center">
+    <h2 class="text-2xl font-bold text-gray-900 mb-2 animate-fade-in-down">
+      Our Location
+    </h2>
+    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 transform hover:scale-[1.02] transition-all duration-500 ease-in-out">
+      <iframe 
+        class="w-full h-[300px] animate-zoom-in"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.896876389017!2d76.9544967744881!3d11.016844592166306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85853a4b5cd65%3A0xe2c7b6d28f0402e!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1694138850382!5m2!1sen!2sin"
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+      <!-- Floating Pin Animation -->
+      <div class="absolute top-6 left-6 bg-white/10 backdrop-blur-md rounded-full p-3 shadow-xl animate-bounce">
+        <span class="text-white text-2xl">📍</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Animations -->
+<style>
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in-down { animation: fadeInDown 1s ease forwards; }
+.animate-fade-in-up { animation: fadeInUp 1s ease forwards; }
+.animate-zoom-in { animation: zoomIn 1s ease forwards; }
+</style>
+
                     </div>
-                  <div class="g-fade-in bg-gray-800/50 p-8 rounded-lg shadow-md">
+                  <div class="g-fade-in bg-gray-800/50 p-9 rounded-lg shadow-md">
   <form id="contact-form">
     <div class="mb-4">
       <input type="text" name="name" placeholder="Name" class="w-full p-3 border rounded-md" required>
@@ -188,6 +230,7 @@
                 </div>
             </div>
         </section>
+        
     </main>
 
    <footer class="bg-gray-800/60 text-gray-300 rounded-xl py-12 relative z-10">
