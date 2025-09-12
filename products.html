@@ -22,14 +22,15 @@
 </head>
 <body class="text-gray-800">
 
-    <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 bg-[#0A192F] flex flex-col items-center justify-center z-[200]">
+   <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-black/90 flex flex-col items-center justify-center z-[200]">
         <div id="preloader-animation-container" class="w-32 h-32 md:w-40 md:h-40 mb-4">
             <!-- 3D Animation will be rendered here -->
         </div>
         <h1 class="text-3xl md:text-4xl font-bold text-white">Zoding Technologies</h1>
         <p class="text-white text-lg mt-2">Loading Awesome...</p>
     </div>
+
 
     <video autoplay loop muted playsinline id="bg-video">
         <source src="./video/Robot_Computer_Video_Ready.mp4" type="video/mp4">
@@ -94,8 +95,8 @@
             <h2 class="text-2xl font-bold mb-4">Connect With Us</h2>
             <p class="text-gray-600 mb-6">Have a question or a project in mind? We're here to help!</p>
             <div class="flex flex-col gap-4">
-                <a href="tel:+6374085915" class="w-full bg-blue-600 text-white p-3 rounded-md font-semibold hover:bg-blue-700 flex items-center justify-center gap-2"><i data-feather="phone"></i> Call Us</a>
-                <a href="https://wa.me/6374085915" target="_blank" class="w-full bg-green-500 text-white p-3 rounded-md font-semibold hover:bg-green-600 flex items-center justify-center gap-2"><i data-feather="message-circle"></i> WhatsApp</a>
+                <a href="tel:+9003140198" class="w-full bg-blue-600 text-white p-3 rounded-md font-semibold hover:bg-blue-700 flex items-center justify-center gap-2"><i data-feather="phone"></i> Call Us</a>
+                <a href="https://wa.me/9003140198" target="_blank" class="w-full bg-green-500 text-white p-3 rounded-md font-semibold hover:bg-green-600 flex items-center justify-center gap-2"><i data-feather="message-circle"></i> WhatsApp</a>
             </div>
             <button id="close-contact-popup" class="w-full mt-4 text-gray-500 hover:text-gray-700">Close</button>
         </div>
@@ -104,15 +105,15 @@
     <!-- Floating Action Button -->
     <div id="fab-container">
         <div id="fab-options" class="flex flex-col items-center gap-3 mb-3 fab-options opacity-0 -translate-y-4">
-            <a href="https://wa.me/6374085915" target="_blank" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="message-circle"></i></a>
-            <a href="tel:+6374085915" class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="phone"></i></a>
+            <a href="https://wa.me/9003140198" target="_blank" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="message-circle"></i></a>
+            <a href="tel:+9003140198" class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="phone"></i></a>
         </div>
         <button id="fab-main" class="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white shadow-xl transform hover:scale-110 transition-transform">
             <i data-feather="message-square" class="w-8 h-8"></i>
         </button>
     </div>
 
-  <header id="main-header" class="bg-gray-800/50 fixed top-0 left-0 right-0 z-50 rounded-lg transition-all duration-300">
+<header id="main-header" class="bg-gray-800/50 fixed top-0 left-0 right-0 z-50 rounded-lg transition-all duration-300">
   <div class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo -->
@@ -123,12 +124,11 @@
 
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center space-x-6">
-        <a href="Index.html" class="nav-link text-white hover:text-blue-600 active">Home</a>
-        <a href="about.html" class="nav-link text-white hover:text-blue-600">About</a>
+        <a href="Index.html" class="nav-link text-white hover:text-blue-600 ">Home</a>
+        <a href="about.html" class="nav-link text-white hover:text-blue-600 active">About</a>
         <a href="services.html" class="nav-link text-white hover:text-blue-600">Services</a>
         <a href="products.html" class="nav-link text-white hover:text-blue-600">Products</a>
         <a href="careers.html" class="nav-link text-white hover:text-blue-600">Careers</a>
-        <a href="blog.html" class="nav-link text-white hover:text-blue-600">Blog</a>
         <a href="contact.html" class="nav-link text-white hover:text-blue-600">Contact</a>
       </nav>
 
@@ -148,7 +148,6 @@
     <a href="services.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Services</a>
     <a href="products.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Products</a>
     <a href="careers.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Careers</a>
-    <a href="blog.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Blog</a>
     <a href="contact.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Contact</a>
   </div>
 </header>
@@ -202,17 +201,20 @@
             </div>
         </section>
         <!-- PAGE: Home -->
-        <section class="page-content">
-            <!-- 3D Slider Section -->
-            <div class="content-section bg-white/50 ">
-                <div class="container mx-auto text-center">
-                    <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 g-fade-in">Our Work in Motion</h3>
-                    <div class="swiper-container-3d g-fade-in">
-                        <div class="swiper-wrapper" id="home-projects-slider"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div>
+        <section class="page-content overflow-hidden ">
+             <section class="page-content ">
+           <div class="content-section relative bg-white/50 text-gray-900">
+  <div class="container mx-auto text-center relative z-10">
+    <h3 class="text-4xl md:text-5xl font-extrabold mb-12 g-fade-in tracking-tight">
+    Our Work in Motion
+    </h3>
+    <div class="swiper-container-3d g-fade-in">
+      <div class="swiper-wrapper" id="home-projects-slider"></div>
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+  </div>
+
+</div>
             <!-- Technologies We Use -->
             <div class="content-section bg-white/50 ">
                 <div class="text-center mb-12"><h2 class="text-4xl font-bold g-fade-in">Technologies We Use</h2></div>
@@ -227,8 +229,6 @@
         </section>
 
     
-
-
        
 <footer class="bg-gray-800/60 text-gray-300 rounded-xl py-12 relative z-10">
         <div class="container mx-auto px-6">
@@ -324,12 +324,9 @@
         ];
 
         const productsData = [
-            { id: 1, name: 'PayrollPro Suite', short_desc: 'Automate salaries, tax, and compliance.', imageUrl: 'https://placehold.co/600x400/6366F1/FFFFFF?text=PayrollPro', videoUrl: 'https://cdn.pixabay.com/video/2020/03/17/33333-403426161.mp4', full_desc: 'Our comprehensive Payroll Management System simplifies and automates your entire payroll process. From calculating salaries and deductions to generating payslips and ensuring tax compliance, our solution is designed to be secure, accurate, and incredibly user-friendly.', features: ['Automated Salary Calculations', 'Tax Compliance Engine', 'Employee Self-Service Portal', 'Detailed Reporting & Analytics', 'Leave Management Integration'] },
-            { id: 2, name: 'FoodFlow AI', short_desc: 'Reduce wastage and optimize food distribution.', imageUrl: 'https://placehold.co/600x400/10B981/FFFFFF?text=FoodFlow', videoUrl: null, full_desc: 'Revolutionize your food supply chain with our Smart Food Management System. Leveraging AI and IoT, this platform optimizes inventory, reduces wastage, and ensures transparent distribution from source to consumer. Ideal for restaurants, hotels, and large-scale food businesses.', features: ['Real-time Inventory Tracking', 'AI-powered Demand Forecasting', 'Wastage Reduction Analytics', 'Supply Chain Transparency', 'Automated Ordering System'] },
-            { id: 3, name: 'Attendly Dashboard', short_desc: 'Real-time attendance with analytics.', imageUrl: 'https://placehold.co/600x400/F59E0B/FFFFFF?text=Attendly', videoUrl: 'https://cdn.pixabay.com/video/2023/07/22/173907-848443229.mp4', full_desc: 'Monitor your workforce with our intuitive, real-time Attendance Dashboard. Integrate with various biometric and mobile check-in systems to get live updates, generate insightful reports, and manage leave requests seamlessly. Simplify your HR tasks and boost productivity.', features: ['Live Attendance Tracking', 'Customizable Reports', 'Leave Management Integration', 'Mobile Check-in Capability', 'Shift Scheduling'] },
-            { id: 4, name: 'CyberSecure Shield', short_desc: 'Proactive threat detection and response.', imageUrl: 'https://placehold.co/600x400/EF4444/FFFFFF?text=CyberSecure', videoUrl: null, full_desc: 'Protect your digital infrastructure with CyberSecure Shield. Our platform offers 24/7 monitoring, AI-driven threat detection, and automated response capabilities to safeguard your business against evolving cyber threats. Stay one step ahead of attackers with our comprehensive security solution.', features: ['AI-Powered Threat Intelligence', '24/7 Network Monitoring', 'Automated Incident Response', 'Vulnerability Scanning', 'Compliance Reporting'] },
-            { id: 5, name: 'LearnSphere LMS', short_desc: 'Next-gen Learning Management System.', imageUrl: 'https://placehold.co/600x400/8B5CF6/FFFFFF?text=LearnSphere', videoUrl: 'https://cdn.pixabay.com/video/2024/04/16/208310-932649646.mp4', full_desc: 'Transform your educational and corporate training programs with LearnSphere, a modern Learning Management System. Deliver engaging courses, track progress with advanced analytics, and foster a collaborative learning environment with our intuitive and scalable platform.', features: ['Interactive Course Builder', 'Advanced Analytics & Reporting', 'Gamification Elements', 'Mobile Learning Support', 'Social Learning Forums'] },
-            { id: 6, name: 'E-Com Boost', short_desc: 'All-in-one e-commerce optimization suite.', imageUrl: 'https://placehold.co/600x400/F97316/FFFFFF?text=E-Com+Boost', videoUrl: null, full_desc: 'Supercharge your online store with E-Com Boost. This suite of tools provides AI-powered product recommendations, automated marketing campaigns, and advanced sales analytics to help you increase conversions and maximize revenue.', features: ['AI Recommendation Engine', 'Automated Email & SMS Marketing', 'Customer Segmentation', 'Sales & Conversion Analytics', 'A/B Testing Framework'] }
+            { id: 1, name: 'EmbeddedSystem369', short_desc: 'Automate salaries, tax, and compliance.', imageUrl: 'data:image/jpeg;base64,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', videoUrl: 'https://cdn.pixabay.com/video/2020/03/17/33333-403426161.mp4', full_desc: 'Our comprehensive Payroll Management System simplifies and automates your entire payroll process. From calculating salaries and deductions to generating payslips and ensuring tax compliance, our solution is designed to be secure, accurate, and incredibly user-friendly.', features: ['Automated Salary Calculations', 'Tax Compliance Engine', 'Employee Self-Service Portal', 'Detailed Reporting & Analytics', 'Leave Management Integration'] },
+            { id: 2, name: 'Glompsgrap', short_desc: 'Reduce wastage and optimize food distribution.', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr5ojJBMx5S9ttVo9_bdPJBdaArf4Qh6qY6Q&s', videoUrl: null, full_desc: 'Revolutionize your food supply chain with our Smart Food Management System. Leveraging AI and IoT, this platform optimizes inventory, reduces wastage, and ensures transparent distribution from source to consumer. Ideal for restaurants, hotels, and large-scale food businesses.', features: ['Real-time Inventory Tracking', 'AI-powered Demand Forecasting', 'Wastage Reduction Analytics', 'Supply Chain Transparency', 'Automated Ordering System'] },
+            { id: 3, name: 'Irobotics', short_desc: 'Real-time attendance with analytics.', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSakOzOEMmAfiJ8uiXGSfXHpL9nrpZ2H4WvyQ&sv', videoUrl: 'https://cdn.pixabay.com/video/2023/07/22/173907-848443229.mp4', full_desc: 'Monitor your workforce with our intuitive, real-time Attendance Dashboard. Integrate with various biometric and mobile check-in systems to get live updates, generate insightful reports, and manage leave requests seamlessly. Simplify your HR tasks and boost productivity.', features: ['Live Attendance Tracking', 'Customizable Reports', 'Leave Management Integration', 'Mobile Check-in Capability', 'Shift Scheduling'] },
         ];
 
         function initializeApp() {
@@ -503,29 +500,54 @@
             });
         }
 
-        function setup3dSlider() {
-            const sliderWrapper = document.getElementById('home-projects-slider');
-            projectsData.forEach(p => {
-                const slide = document.createElement('div');
-                slide.className = 'swiper-slide swiper-slide-3d';
-                slide.dataset.projectId = p.id;
+         function setup3dSlider() {
+  const sliderWrapper = document.getElementById("home-projects-slider");
+  projectsData.forEach((p) => {
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide swiper-slide-3d";
+    slide.dataset.projectId = p.id;
 
-                if (p.mediaType === 'video') {
-                    slide.innerHTML = `<video autoplay loop muted playsinline><source src="${p.mediaUrl}" type="video/mp4"></video>`;
-                } else {
-                    slide.style.backgroundImage = `url(${p.mediaUrl})`;
-                }
-                sliderWrapper.appendChild(slide);
-            });
+    if (p.mediaType === "video") {
+      slide.innerHTML = `
+        <video autoplay loop muted playsinline>
+          <source src="${p.mediaUrl}" type="video/mp4">
+        </video>
+        <div class="slide-overlay">
+          <h4>${p.title}</h4>
+          <p>${p.description}</p>
+          <button>View Project</button>
+        </div>
+      `;
+    } else {
+      slide.style.backgroundImage = `url(${p.mediaUrl})`;
+      slide.innerHTML = `
+        <div class="slide-overlay">
+          <h4>${p.title}</h4>
+          <p>${p.description}</p>
+          <button>View Project</button>
+        </div>
+      `;
+    }
+    sliderWrapper.appendChild(slide);
+  });
 
-            new Swiper('.swiper-container-3d', {
-                effect: 'coverflow', grabCursor: true, centeredSlides: true, slidesPerView: 'auto', loop: true,
-                autoplay: { delay: 3000, disableOnInteraction: false },
-                coverflowEffect: { rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true, },
-                pagination: { el: '.swiper-pagination', clickable: true },
-            });
-        }
-        
+  new Swiper(".swiper-container-3d", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 150,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: { el: ".swiper-pagination", clickable: true },
+  });
+}
         function openModal(modal) {
             modal.classList.remove('hidden');
             gsap.fromTo(modal, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.3, ease: 'power2.out' });
@@ -564,17 +586,17 @@
             openModal(document.getElementById('project-modal'));
         }
 
-        function setupTechSection() {
+         function setupTechSection() {
             const tabsContainer = document.getElementById('tech-tabs');
             const gridContainer = document.getElementById('tech-grid');
-            const categories = ['All', ...new Set(technologiesData.map(t => t.category))];
+            const categories = ['', ...new Set(technologiesData.map(t => t.category))];
 
             categories.forEach(cat => {
                 const tab = document.createElement('button');
                 tab.className = 'tech-tab';
                 tab.textContent = cat;
                 tab.dataset.category = cat;
-                if (cat === 'All') tab.classList.add('active');
+                if (cat === 'Frontend') tab.classList.add('active');
                 tabsContainer.appendChild(tab);
             });
 
@@ -598,8 +620,9 @@
             document.getElementById('close-tech-modal-btn').addEventListener('click', () => closeModal(techModal));
             techModal.addEventListener('click', e => { if(e.target.id === 'tech-modal') closeModal(techModal); });
 
-            renderTechCards('All');
+            renderTechCards('Frontend');
         }
+
 
         function renderTechCards(category) {
             const gridContainer = document.getElementById('tech-grid');
