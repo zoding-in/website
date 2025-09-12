@@ -22,14 +22,15 @@
 </head>
 <body class="text-gray-800">
 
-    <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 bg-[#0A192F] flex flex-col items-center justify-center z-[200]">
+   <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-black/90 flex flex-col items-center justify-center z-[200]">
         <div id="preloader-animation-container" class="w-32 h-32 md:w-40 md:h-40 mb-4">
             <!-- 3D Animation will be rendered here -->
         </div>
         <h1 class="text-3xl md:text-4xl font-bold text-white">Zoding Technologies</h1>
         <p class="text-white text-lg mt-2">Loading Awesome...</p>
     </div>
+
 
     <video autoplay loop muted playsinline id="bg-video">
         <source src="./video/Robot_Computer_Video_Ready.mp4" type="video/mp4">
@@ -104,8 +105,8 @@
     <!-- Floating Action Button -->
     <div id="fab-container">
         <div id="fab-options" class="flex flex-col items-center gap-3 mb-3 fab-options opacity-0 -translate-y-4">
-            <a href="https://wa.me/6374085915" target="_blank" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="message-circle"></i></a>
-            <a href="tel:+6374085915" class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="phone"></i></a>
+            <a href="https://wa.me/9003140198" target="_blank" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="message-circle"></i></a>
+            <a href="tel:+9003140198" class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="phone"></i></a>
         </div>
         <button id="fab-main" class="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white shadow-xl transform hover:scale-110 transition-transform">
             <i data-feather="message-square" class="w-8 h-8"></i>
@@ -123,12 +124,11 @@
 
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center space-x-6">
-        <a href="Index.html" class="nav-link text-white hover:text-blue-600 active">Home</a>
-        <a href="about.html" class="nav-link text-white hover:text-blue-600">About</a>
-        <a href="services.html" class="nav-link text-white hover:text-blue-600">Services</a>
+        <a href="Index.html" class="nav-link text-white hover:text-blue-600 ">Home</a>
+        <a href="about.html" class="nav-link text-white hover:text-blue-600 ">About</a>
+        <a href="services.html" class="nav-link text-white hover:text-blue-600 active">Services</a>
         <a href="products.html" class="nav-link text-white hover:text-blue-600">Products</a>
         <a href="careers.html" class="nav-link text-white hover:text-blue-600">Careers</a>
-        <a href="blog.html" class="nav-link text-white hover:text-blue-600">Blog</a>
         <a href="contact.html" class="nav-link text-white hover:text-blue-600">Contact</a>
       </nav>
 
@@ -148,7 +148,6 @@
     <a href="services.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Services</a>
     <a href="products.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Products</a>
     <a href="careers.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Careers</a>
-    <a href="blog.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Blog</a>
     <a href="contact.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Contact</a>
   </div>
 </header>
@@ -190,17 +189,19 @@
             </div>
         </section>
        
-        <section class="page-content">
-            <!-- 3D Slider Section -->
-            <div class="content-section bg-white/50 ">
-                <div class="container mx-auto text-center">
-                    <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 g-fade-in">Our Work in Motion</h3>
-                    <div class="swiper-container-3d g-fade-in">
-                        <div class="swiper-wrapper" id="home-projects-slider"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div>
+        <section class="page-content overflow-hidden ">
+           <div class="content-section relative bg-white/50 text-gray-900">
+  <div class="container mx-auto text-center relative z-10">
+    <h3 class="text-4xl md:text-5xl font-extrabold mb-12 g-fade-in tracking-tight">
+    Our Work in Motion
+    </h3>
+    <div class="swiper-container-3d g-fade-in">
+      <div class="swiper-wrapper" id="home-projects-slider"></div>
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+  </div>
+
+</div>
             <!-- Technologies We Use -->
             <div class="content-section bg-white/50 ">
                 <div class="text-center mb-12"><h2 class="text-4xl font-bold g-fade-in">Technologies We Use</h2></div>
@@ -214,12 +215,8 @@
            
         </section>
 
-       
+    </main>
 
-    
-
-
-       
 <footer class="bg-gray-800/60 text-gray-300 rounded-xl py-12 relative z-10">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -306,11 +303,7 @@
             { id: 'custom-software', title: 'Custom Software Development', icon: 'codepen', imageUrl: './imeges/s1.png', full_desc: 'We specialize in creating bespoke software solutions that are perfectly aligned with your business processes. From concept to deployment, our team works closely with you to build robust, scalable, and secure applications that provide a competitive edge.' },
             { id: 'web-dev', title: 'Web Development', icon: 'globe', imageUrl: './imeges/s2.jpg', full_desc: 'We build high-performance web applications that deliver a seamless user experience across all devices. Using modern frameworks like React and Node.js, we create scalable solutions that drive engagement and conversions.' },
             { id: 'mobile-dev', title: 'Mobile App Development', icon: 'smartphone', imageUrl: './imeges/s3.jpg', full_desc: 'From native iOS and Android apps to cross-platform solutions with Flutter, we create mobile experiences that are intuitive, engaging, and performant. We handle the entire lifecycle, from UI/UX design to App Store submission.' },
-            { id: 'cloud-devops', title: 'Cloud & DevOps', icon: 'cloud', imageUrl: './imeges/s4.png', full_desc: 'Leverage the power of the cloud with our expert DevOps services. We help you with cloud migration, CI/CD pipeline automation, and infrastructure management on platforms like AWS and Google Cloud to ensure scalability and reliability.' },
-            { id: 'ai-ml', title: 'AI & Machine Learning', icon: 'cpu', imageUrl: './imeges/s5.png', full_desc: 'Unlock the potential of your data with our AI and Machine Learning services. We build intelligent systems for predictive analytics, natural language processing, and computer vision to automate processes and derive actionable insights.' },
             { id: 'ui-ux', title: 'UI/UX Design', icon: 'pen-tool', imageUrl: './imeges/s6.png', full_desc: 'Our design team creates beautiful, user-centric interfaces that are both aesthetically pleasing and highly functional. We focus on creating intuitive user journeys that enhance satisfaction and drive user adoption.' },
-            { id: 'cybersecurity', title: 'Cybersecurity Solutions', icon: 'shield', imageUrl: './imeges/s7.png', full_desc: 'Safeguard your digital assets with our comprehensive cybersecurity services. We offer vulnerability assessments, penetration testing, and security architecture design to protect your applications and infrastructure from modern threats.' },
-            { id: 'it-consulting', title: 'IT Consulting', icon: 'users', imageUrl: './imeges/s8.png', full_desc: 'Navigate the complexities of digital transformation with our expert IT consulting. We provide strategic guidance on technology adoption, process optimization, and IT infrastructure to help you achieve your business goals.' }
         ];
 
         const productsData = [
@@ -493,29 +486,54 @@
             });
         }
 
-        function setup3dSlider() {
-            const sliderWrapper = document.getElementById('home-projects-slider');
-            projectsData.forEach(p => {
-                const slide = document.createElement('div');
-                slide.className = 'swiper-slide swiper-slide-3d';
-                slide.dataset.projectId = p.id;
+       function setup3dSlider() {
+  const sliderWrapper = document.getElementById("home-projects-slider");
+  projectsData.forEach((p) => {
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide swiper-slide-3d";
+    slide.dataset.projectId = p.id;
 
-                if (p.mediaType === 'video') {
-                    slide.innerHTML = `<video autoplay loop muted playsinline><source src="${p.mediaUrl}" type="video/mp4"></video>`;
-                } else {
-                    slide.style.backgroundImage = `url(${p.mediaUrl})`;
-                }
-                sliderWrapper.appendChild(slide);
-            });
+    if (p.mediaType === "video") {
+      slide.innerHTML = `
+        <video autoplay loop muted playsinline>
+          <source src="${p.mediaUrl}" type="video/mp4">
+        </video>
+        <div class="slide-overlay">
+          <h4>${p.title}</h4>
+          <p>${p.description}</p>
+          <button>View Project</button>
+        </div>
+      `;
+    } else {
+      slide.style.backgroundImage = `url(${p.mediaUrl})`;
+      slide.innerHTML = `
+        <div class="slide-overlay">
+          <h4>${p.title}</h4>
+          <p>${p.description}</p>
+          <button>View Project</button>
+        </div>
+      `;
+    }
+    sliderWrapper.appendChild(slide);
+  });
 
-            new Swiper('.swiper-container-3d', {
-                effect: 'coverflow', grabCursor: true, centeredSlides: true, slidesPerView: 'auto', loop: true,
-                autoplay: { delay: 3000, disableOnInteraction: false },
-                coverflowEffect: { rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true, },
-                pagination: { el: '.swiper-pagination', clickable: true },
-            });
-        }
-        
+  new Swiper(".swiper-container-3d", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 150,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: { el: ".swiper-pagination", clickable: true },
+  });
+}
         function openModal(modal) {
             modal.classList.remove('hidden');
             gsap.fromTo(modal, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.3, ease: 'power2.out' });
@@ -557,14 +575,14 @@
         function setupTechSection() {
             const tabsContainer = document.getElementById('tech-tabs');
             const gridContainer = document.getElementById('tech-grid');
-            const categories = ['All', ...new Set(technologiesData.map(t => t.category))];
+            const categories = ['', ...new Set(technologiesData.map(t => t.category))];
 
             categories.forEach(cat => {
                 const tab = document.createElement('button');
                 tab.className = 'tech-tab';
                 tab.textContent = cat;
                 tab.dataset.category = cat;
-                if (cat === 'All') tab.classList.add('active');
+                if (cat === 'Frontend') tab.classList.add('active');
                 tabsContainer.appendChild(tab);
             });
 
@@ -588,14 +606,14 @@
             document.getElementById('close-tech-modal-btn').addEventListener('click', () => closeModal(techModal));
             techModal.addEventListener('click', e => { if(e.target.id === 'tech-modal') closeModal(techModal); });
 
-            renderTechCards('All');
+            renderTechCards('Frontend');
         }
 
         function renderTechCards(category) {
             const gridContainer = document.getElementById('tech-grid');
             gridContainer.innerHTML = '';
-            const filteredTech = category === 'All' ? technologiesData : technologiesData.filter(t => t.category === category);
-            
+            const filteredTech = category === 'Front-end' ? technologiesData : technologiesData.filter(t => t.category === category);
+
             filteredTech.forEach(tech => {
                 const card = document.createElement('button');
                 card.className = 'text-center p-4 bg-white rounded-lg shadow-md interactive-card tech-card cursor-pointer';
