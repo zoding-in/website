@@ -23,13 +23,14 @@
 <body class="text-gray-800">
 
     <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 bg-[#0A192F] flex flex-col items-center justify-center z-[200]">
+    <div id="preloader" class="fixed inset-0 bg-black/90 flex flex-col items-center justify-center z-[200]">
         <div id="preloader-animation-container" class="w-32 h-32 md:w-40 md:h-40 mb-4">
             <!-- 3D Animation will be rendered here -->
         </div>
         <h1 class="text-3xl md:text-4xl font-bold text-white">Zoding Technologies</h1>
         <p class="text-white text-lg mt-2">Loading Awesome...</p>
     </div>
+
 
     <video autoplay loop muted playsinline id="bg-video">
         <source src="./video/Robot_Computer_Video_Ready.mp4" type="video/mp4">
@@ -100,12 +101,11 @@
 
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center space-x-6">
-        <a href="Index.html" class="nav-link text-white hover:text-blue-600 active">Home</a>
-        <a href="about.html" class="nav-link text-white hover:text-blue-600">About</a>
+        <a href="Index.html" class="nav-link text-white hover:text-blue-600 ">Home</a>
+        <a href="about.html" class="nav-link text-white hover:text-blue-600 active">About</a>
         <a href="services.html" class="nav-link text-white hover:text-blue-600">Services</a>
         <a href="products.html" class="nav-link text-white hover:text-blue-600">Products</a>
         <a href="careers.html" class="nav-link text-white hover:text-blue-600">Careers</a>
-        <a href="blog.html" class="nav-link text-white hover:text-blue-600">Blog</a>
         <a href="contact.html" class="nav-link text-white hover:text-blue-600">Contact</a>
       </nav>
 
@@ -125,11 +125,9 @@
     <a href="services.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Services</a>
     <a href="products.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Products</a>
     <a href="careers.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Careers</a>
-    <a href="blog.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Blog</a>
     <a href="contact.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Contact</a>
   </div>
 </header>
-
 <script>
   // Toggle Mobile Menu + Hamburger Animation
   const menuButton = document.getElementById("mobile-menu-button");
@@ -155,7 +153,7 @@
   .rotate-45 { transform: rotate(45deg); }
   .-rotate-45 { transform: rotate(-45deg); }
   .translate-y-2 { transform: translateY(8px); }
-  .-translate-y-2 { transform: translateY(-8px); }  
+  .-translate-y-2 { transform: translateY(-8px); }
 </style>
     <main>
         <section class="content-section bg-white/50 ">
@@ -165,18 +163,10 @@
                     <p class="text-xl text-gray-600 mb-12 g-fade-in">At Zoding Technologies, we are passionate about technology and innovation. Our mission is to create software solutions that are scalable, user-friendly, and future-ready. With a team of experienced developers, designers, and consultants, we deliver results that drive business growth.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="g-fade-in"><img src="https://placehold.co/600x400/60A5FA/FFFFFF?text=Our+Team" alt="Our Team" class="rounded-lg shadow-lg w-full"></div>
+                    <div class="g-fade-in"><img src="https://img.pikbest.com/backgrounds/20241209/fast-artificial-intelligence-ai-human-power-technology_11231214.jpg!w700wp" alt="Our Team" class="rounded-lg shadow-lg w-full"></div>
                     <div class="g-fade-in">
                         <div class="mb-6"><h3 class="text-2xl font-bold text-gray-900">Mission</h3><p class="text-lg text-gray-600">We aim to become your complete web development solution partner, through the most eligible developers, technical knack and innovation.</p></div>
                         <div><h3 class="text-2xl font-bold text-gray-900">Vision</h3><p class="text-lg text-gray-600">At CSSChopper, we envision becoming an industry leader by delivering innovative and unmatched solutions to clients through our expertise and knowledgeable resources.</p></div>
-                    </div>
-                </div>
-                <div class="mt-24">
-                    <div class="text-center mb-12"><h2 class="text-4xl font-bold g-fade-in">Leadership Team</h2></div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="text-center p-6 bg-white rounded-lg shadow-md interactive-card g-fade-in"><img class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4" src="https://placehold.co/200x200/E5E7EB/4B5563?text=CEO" alt="Founder & CEO"><h3 class="text-xl font-bold">Priya Sharma</h3><p class="text-blue-600 font-semibold">Founder & CEO</p></div>
-                        <div class="text-center p-6 bg-white rounded-lg shadow-md interactive-card g-fade-in"><img class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4" src="https://placehold.co/200x200/E5E7EB/4B5563?text=CTO" alt="CTO"><h3 class="text-xl font-bold">Rohan Mehta</h3><p class="text-blue-600 font-semibold">Chief Technology Officer</p></div>
-                        <div class="text-center p-6 bg-white rounded-lg shadow-md interactive-card g-fade-in sm:col-span-2 lg:col-span-1"><img class="w-32 h-32 mx-auto rounded-full shadow-lg mb-4" src="https://placehold.co/200x200/E5E7EB/4B5563?text=COO" alt="COO"><h3 class="text-xl font-bold">Anjali Desai</h3><p class="text-blue-600 font-semibold">Chief Operating Officer</p></div>
                     </div>
                 </div>
             </div>
@@ -185,7 +175,7 @@
     <footer class="bg-gray-800/60 text-gray-300 rounded-xl py-12 relative z-10">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div><h3 class="text-lg font-bold text-white mb-4">Quick Links</h3><ul class="space-y-2"><li class="hover:text-white"><a href="#home">Home</a></li><li class="hover:text-white"><a href="#about">About</a></li><li class="hover:text-white"><a href="#services">Services</a></li><li class="hover:text-white"><a href="#careers">Careers</a></li><li class="hover:text-white"><a href="#blog">Blog</a></li><li class="hover:text-white"><a href="#contact">Contact</a></li></ul></div>
+                <div><h3 class="text-lg font-bold text-white mb-4">Quick Links</h3><ul class="space-y-2"><li class="hover:text-white"><a href="#home">Home</a></li><li class="hover:text-white"><a href="#about">About</a></li><li class="hover:text-white"><a href="#services">Services</a></li><li class="hover:text-white"><a href="#careers">Careers</a></li><li class="hover:text-white"><a href="#contact">Contact</a></li></ul></div>
                 <div><h3 class="text-lg font-bold text-white mb-4">Follow Us</h3><div class="flex space-x-4"><a href="#" class="hover:text-white"><i data-feather="linkedin"></i></a><a href="#" class="hover:text-white"><i data-feather="instagram"></i></a></div></div>
                 <div class="md:col-span-2"><h3 class="text-lg font-bold text-white mb-4">Subscribe to our Newsletter</h3><p class="mb-4">Subscribe to get the latest tech updates.</p><form class="flex"><input type="email" placeholder="Your Email" class="w-full p-2 rounded-l-md text-gray-800"><button type="submit" class="btn-gradient text-white px-4 py-2 rounded-r-md">Subscribe</button></form></div>
             </div>
@@ -267,7 +257,6 @@
             { id: 'cloud-devops', title: 'Cloud & DevOps', icon: 'cloud', imageUrl: 'https://placehold.co/400x300/6366F1/FFFFFF?text=Cloud', full_desc: 'Leverage the power of the cloud with our expert DevOps services. We help you with cloud migration, CI/CD pipeline automation, and infrastructure management on platforms like AWS and Google Cloud to ensure scalability and reliability.' },
             { id: 'ai-ml', title: 'AI & Machine Learning', icon: 'cpu', imageUrl: 'https://placehold.co/400x300/EC4899/FFFFFF?text=AI+%26+ML', full_desc: 'Unlock the potential of your data with our AI and Machine Learning services. We build intelligent systems for predictive analytics, natural language processing, and computer vision to automate processes and derive actionable insights.' },
             { id: 'ui-ux', title: 'UI/UX Design', icon: 'pen-tool', imageUrl: 'https://placehold.co/400x300/8B5CF6/FFFFFF?text=UI/UX', full_desc: 'Our design team creates beautiful, user-centric interfaces that are both aesthetically pleasing and highly functional. We focus on creating intuitive user journeys that enhance satisfaction and drive user adoption.' },
-            { id: 'cybersecurity', title: 'Cybersecurity Solutions', icon: 'shield', imageUrl: 'https://placehold.co/400x300/EF4444/FFFFFF?text=Security', full_desc: 'Safeguard your digital assets with our comprehensive cybersecurity services. We offer vulnerability assessments, penetration testing, and security architecture design to protect your applications and infrastructure from modern threats.' },
             { id: 'it-consulting', title: 'IT Consulting', icon: 'users', imageUrl: 'https://placehold.co/400x300/F97316/FFFFFF?text=Consulting', full_desc: 'Navigate the complexities of digital transformation with our expert IT consulting. We provide strategic guidance on technology adoption, process optimization, and IT infrastructure to help you achieve your business goals.' }
         ];
 
