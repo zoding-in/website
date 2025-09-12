@@ -23,7 +23,7 @@
 <body class="text-gray-800">
 
     <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 bg-[#0A192F] flex flex-col items-center justify-center z-[200]">
+    <div id="preloader" class="fixed inset-0 bg-black/90 flex flex-col items-center justify-center z-[200]">
         <div id="preloader-animation-container" class="w-32 h-32 md:w-40 md:h-40 mb-4">
             <!-- 3D Animation will be rendered here -->
         </div>
@@ -91,17 +91,17 @@
 
     <!-- Contact Popup -->
 <div id="contact-popup" class="modal hidden opacity-0 fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[100] p-4 transition-opacity duration-300">
-    <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md mx-4 text-center transform scale-90 transition-transform duration-300">
+    <div class=" bg-white/70 p-8 rounded-2xl shadow-2xl w-full max-w-md mx-4 text-center transform scale-90 transition-transform duration-300">
         <h2 class="text-3xl font-extrabold mb-3 text-gray-800">Connect With Us</h2>
         <p class="text-gray-500 mb-6">Have a question or a project in mind? We're here to help!</p>
         
         <div class="flex flex-col gap-4">
-            <a href="tel:+6374085915" 
+            <a href="tel:+9003140198" 
                class="w-full bg-blue-600 text-white p-3 rounded-xl font-semibold hover:bg-blue-700 flex items-center justify-center gap-3 transition-all duration-200 shadow-md hover:shadow-lg">
                 <i data-feather="phone" class="w-5 h-5"></i> Call Us
             </a>
             
-            <a href="https://wa.me/6374085915" target="_blank"
+            <a href="https://wa.me/9003140198" target="_blank"
                class="w-full bg-green-500 text-white p-3 rounded-xl font-semibold hover:bg-green-600 flex items-center justify-center gap-3 transition-all duration-200 shadow-md hover:shadow-lg">
                 <i data-feather="message-circle" class="w-5 h-5"></i> WhatsApp
             </a>
@@ -152,14 +152,14 @@
     <!-- Floating Action Button -->
     <div id="fab-container">
         <div id="fab-options" class="flex flex-col items-center gap-3 mb-3 fab-options opacity-0 -translate-y-4">
-            <a href="https://wa.me/6374085915" target="_blank" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="message-circle"></i></a>
-            <a href="tel:+6374085915" class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="phone"></i></a>
+            <a href="https://wa.me/9003140198" target="_blank" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="message-circle"></i></a>
+            <a href="tel:+9003140198" class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg transform hover:scale-110 transition-transform"><i data-feather="phone"></i></a>
         </div>
         <button id="fab-main" class="w-16 h-16 bg-black rounded-full flex items-center justify-center text-white shadow-xl transform hover:scale-110 transition-transform">
             <i data-feather="message-square" class="w-8 h-8"></i>
         </button>
     </div>
-<header id="main-header" class="bg-gray-800/50 fixed top-0 left-0 right-0 z-50 rounded-lg transition-all duration-300">
+<header id="main-header" class="bg-gray-800/50 fixed top-0 left-0 right-0 z-40 rounded-lg transition-all duration-300">
   <div class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo -->
@@ -175,7 +175,6 @@
         <a href="services.html" class="nav-link text-white hover:text-blue-600">Services</a>
         <a href="products.html" class="nav-link text-white hover:text-blue-600">Products</a>
         <a href="careers.html" class="nav-link text-white hover:text-blue-600">Careers</a>
-        <a href="blog.html" class="nav-link text-white hover:text-blue-600">Blog</a>
         <a href="contact.html" class="nav-link text-white hover:text-blue-600">Contact</a>
       </nav>
 
@@ -189,13 +188,12 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden absolute top-0 left-0 w-full h-screen bg-white pt-24 px-6 pb-4 transition-all duration-500 ease-in-out transform -translate-y-full">
+  <div id="mobile-menu" class="hidden lg:hidden absolute top-0 left-0 w-auto h-screen bg-white pt-24 px-6 pb-4 transition-all duration-500 ease-in-out transform -translate-y-full">
     <a href="Index.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Home</a>
     <a href="about.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">About</a>
     <a href="services.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Services</a>
     <a href="products.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Products</a>
     <a href="careers.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Careers</a>
-    <a href="blog.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Blog</a>
     <a href="contact.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Contact</a>
   </div>
 </header>
@@ -227,22 +225,131 @@
   .translate-y-2 { transform: translateY(8px); }
   .-translate-y-2 { transform: translateY(-8px); }  
 </style>
-    <main>
-        <section class="content-section bg-gray-700/30">
+    <main class="overflow-hidden">
+        <section class="rounded-xl p-8 bg-gray-700/20">
             <div class="h-screen flex items-center justify-center text-white text-center px-6 relative">
-                <div class="relative z-10">
-                    <div class="flex items-center justify-center space-x-4 mb-6 g-fade-in">
-                        <svg class="w-12 h-12 md:w-16 md:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2 1m0 0l-2-1m2 1v2.5M3 12l2-1m0 0l2-1m-2 1v2.5M7 20l2-1m0 0l2-1m-2 1v2.5M12 22l-2-1m0 0l-2-1m2 1v2.5M12 2l-2 1m0 0l-2-1m2 1v2.5"></path></svg>
-                        <h2 class="text-4xl md:text-5xl font-bold">Zoding Technologies</h2>
-                    </div>
-                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 g-fade-in">Building Smart, Scalable & Secure Software Solutions for the Future.</h1>
-                    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 g-fade-in">We are a leading software development company specializing in delivering world-class web, mobile, and cloud solutions. From startups to enterprises, we help businesses transform with cutting-edge technology.</p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 g-fade-in">
-                        <a href="#contact" class="w-full sm:w-auto inline-block btn-gradient text-white px-8 py-3 rounded-md text-lg font-semibold transition transform hover:scale-105">Get Started</a>
-                        <a href="#contact" class="w-full sm:w-auto inline-block bg-gray-700 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-600 transition transform hover:scale-105">Request a Free Consultation</a>
-                    </div>
-                    
-                </div>
+              <div class="h-screen flex items-center justify-center text-white text-center px-6 relative">
+  <div class="relative z-10">
+    <div class="flex items-center justify-center space-x-4 mb-6 g-fade-in">
+      <svg class="w-12 h-12 md:w-16 md:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2 1m0 0l-2-1m2 1v2.5M3 12l2-1m0 0l2-1m-2 1v2.5M7 20l2-1m0 0l2-1m-2 1v2.5M12 22l-2-1m0 0l-2-1m2 1v2.5M12 2l-2 1m0 0l-2-1m2 1v2.5">
+        </path>
+      </svg>
+      <h2 class="text-4xl md:text-5xl font-bold">Zoding Technologies</h2>
+    </div>
+
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 g-fade-in">
+      Building Smart, Scalable & Secure Software Solutions for the Future.
+    </h1>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 g-fade-in">
+      <a href="./contact.html"
+        class="w-full sm:w-auto inline-block btn-gradient text-white px-8 py-3 rounded-2xl text-lg font-semibold transition transform hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.7)]">
+        Get Started
+      </a>
+      <button onclick="openModal()"
+        class="w-full sm:w-auto inline-block bg-white/10 backdrop-blur-md text-white px-8 py-3 rounded-2xl text-lg font-semibold border border-white/20 hover:bg-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition transform hover:scale-105">
+        Request a Free Consultation
+      </button>
+    </div>
+  </div>
+
+  <div class="scroll-indicator"><span></span></div>
+</div>
+
+<!-- Glassmorphism Modal -->
+<div id="consultationModal"
+  class="fixed inset-0 bg-black/70 flex items-center justify-center hidden z-50 transition duration-300">
+  <div id="modalContent"
+    class="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl p-8 w-full max-w-md transform scale-95 opacity-0 transition-all duration-300 text-white relative">
+    <button onclick="closeModal()"
+      class="absolute top-4 right-4 text-gray-300 hover:text-white text-3xl transition">&times;</button>
+
+    <h2 class="text-3xl font-extrabold mb-6 text-center">Request a Free Consultation</h2>
+
+    <form id="consultationForm" class="space-y-4">
+      <!-- Name -->
+      <input type="text" id="name" name="name" placeholder="Your Name" required
+        class="w-full border border-white/20 bg-white/10 p-3 rounded-xl placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-white">
+
+      <!-- Email -->
+      <input type="email" id="email" name="email" placeholder="Your Email" required
+        class="w-full border border-white/20 bg-white/10 p-3 rounded-xl placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-white">
+
+      <!-- Message -->
+      <textarea id="message" name="message" placeholder="Your Message" rows="4" required
+        class="w-full border border-white/20 bg-white/10 p-3 rounded-xl placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-white"></textarea>
+
+      <!-- Contact -->
+      <input type="text" id="contact" name="contact" placeholder="Your Contact Number" required
+        class="w-full border border-white/20 bg-white/10 p-3 rounded-xl placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-white">
+
+      <!-- Submit Button -->
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-bold hover:shadow-[0_0_20px_rgba(59,130,246,0.8)] transition">
+        Submit
+      </button>
+    </form>
+
+    <p id="successMessage"
+      class="hidden text-green-300 text-center font-semibold mt-6 animate-pulse">
+      ✅ Your request has been submitted!
+    </p>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('consultationModal');
+  const modalContent = document.getElementById('modalContent');
+  const form = document.getElementById('consultationForm');
+  const successMessage = document.getElementById('successMessage');
+
+  const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_WEB_APP_URL";
+
+  function openModal() {
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      modalContent.classList.remove('opacity-0', 'scale-95');
+      modalContent.classList.add('opacity-100', 'scale-100');
+    }, 50);
+  }
+
+  function closeModal() {
+    modalContent.classList.remove('opacity-100', 'scale-100');
+    modalContent.classList.add('opacity-0', 'scale-95');
+    setTimeout(() => modal.classList.add('hidden'), 300);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+      contact: form.contact.value
+    };
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(formData)
+      });
+
+      form.reset();
+      successMessage.classList.remove('hidden');
+
+      setTimeout(() => {
+        successMessage.classList.add('hidden');
+        closeModal();
+      }, 5000);
+    } catch (error) {
+      alert("Something went wrong. Please try again!");
+    }
+  });
+</script>
+
                 
                 <div class="scroll-indicator"><span></span></div>
             </div>
@@ -290,16 +397,17 @@
                     </div>
                 </div>
             
-            <!-- 3D Slider Section -->
-            <div class="content-section bg-white/50">
-                <div class="container mx-auto text-center">
-                    <h3 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 g-fade-in">Our Work in Motion</h3>
-                    <div class="swiper-container-3d g-fade-in">
-                        <div class="swiper-wrapper" id="home-projects-slider"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div>
+            <div class="content-section relative bg-white/50 text-gray-900">
+  <div class="container mx-auto text-center relative z-10">
+    <h3 class="text-4xl md:text-5xl font-extrabold mb-12 g-fade-in tracking-tight">
+      Our Work in Motion
+    </h3>
+    <div class="swiper-container-3d g-fade-in">
+      <div class="swiper-wrapper" id="home-projects-slider"></div>
+      <div class="swiper-pagination mt-6"></div>
+    </div>
+  </div>
+  </div>
             <!-- Technologies We Use -->
             <div class="content-section bg-white/50">
                 <div class="text-center mb-12"><h2 class="text-4xl font-bold g-fade-in">Technologies We Use</h2></div>
@@ -318,7 +426,6 @@
                     <div class="g-fade-in"><div class="bg-blue-100 text-blue-600 rounded-full p-4 inline-block mb-4"><i data-feather="lock" class="w-8 h-8"></i></div><h3 class="text-xl font-bold">Security First</h3><p>We build security into every stage of the development lifecycle, ensuring your data and users are protected.</p></div>
                     <div class="g-fade-in"><div class="bg-blue-100 text-blue-600 rounded-full p-4 inline-block mb-4"><i data-feather="trending-up" class="w-8 h-8"></i></div><h3 class="text-xl font-bold">Scalable Solutions</h3><p>We engineer future-proof applications that can grow and adapt with your business needs.</p></div>
                  </div>
-            </div>
             
         </section>
       
@@ -598,27 +705,53 @@
         }
 
         function setup3dSlider() {
-            const sliderWrapper = document.getElementById('home-projects-slider');
-            projectsData.forEach(p => {
-                const slide = document.createElement('div');
-                slide.className = 'swiper-slide swiper-slide-3d';
-                slide.dataset.projectId = p.id;
+  const sliderWrapper = document.getElementById("home-projects-slider");
+  projectsData.forEach((p) => {
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide swiper-slide-3d";
+    slide.dataset.projectId = p.id;
 
-                if (p.mediaType === 'video') {
-                    slide.innerHTML = `<video autoplay loop muted playsinline><source src="${p.mediaUrl}" type="video/mp4"></video>`;
-                } else {
-                    slide.style.backgroundImage = `url(${p.mediaUrl})`;
-                }
-                sliderWrapper.appendChild(slide);
-            });
+    if (p.mediaType === "video") {
+      slide.innerHTML = `
+        <video autoplay loop muted playsinline>
+          <source src="${p.mediaUrl}" type="video/mp4">
+        </video>
+        <div class="slide-overlay">
+          <h4>${p.title}</h4>
+          <p>${p.description}</p>
+          <button>View Project</button>
+        </div>
+      `;
+    } else {
+      slide.style.backgroundImage = `url(${p.mediaUrl})`;
+      slide.innerHTML = `
+        <div class="slide-overlay">
+          <h4>${p.title}</h4>
+          <p>${p.description}</p>
+          <button>View Project</button>
+        </div>
+      `;
+    }
+    sliderWrapper.appendChild(slide);
+  });
 
-            new Swiper('.swiper-container-3d', {
-                effect: 'coverflow', grabCursor: true, centeredSlides: true, slidesPerView: 'auto', loop: true,
-                autoplay: { delay: 3000, disableOnInteraction: false },
-                coverflowEffect: { rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true, },
-                pagination: { el: '.swiper-pagination', clickable: true },
-            });
-        }
+  new Swiper(".swiper-container-3d", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 150,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: { el: ".swiper-pagination", clickable: true },
+  });
+}
         
         function openModal(modal) {
             modal.classList.remove('hidden');
@@ -658,17 +791,17 @@
             openModal(document.getElementById('project-modal'));
         }
 
-        function setupTechSection() {
+       function setupTechSection() {
             const tabsContainer = document.getElementById('tech-tabs');
             const gridContainer = document.getElementById('tech-grid');
-            const categories = ['All', ...new Set(technologiesData.map(t => t.category))];
+            const categories = ['', ...new Set(technologiesData.map(t => t.category))];
 
             categories.forEach(cat => {
                 const tab = document.createElement('button');
                 tab.className = 'tech-tab';
                 tab.textContent = cat;
                 tab.dataset.category = cat;
-                if (cat === 'All') tab.classList.add('active');
+                if (cat === 'Frontend') tab.classList.add('active');
                 tabsContainer.appendChild(tab);
             });
 
@@ -692,7 +825,7 @@
             document.getElementById('close-tech-modal-btn').addEventListener('click', () => closeModal(techModal));
             techModal.addEventListener('click', e => { if(e.target.id === 'tech-modal') closeModal(techModal); });
 
-            renderTechCards('All');
+            renderTechCards('Frontend');
         }
 
         function renderTechCards(category) {
