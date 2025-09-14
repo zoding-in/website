@@ -210,7 +210,7 @@
 </style>
 
                     </div>
-                  <div class="g-fade-in bg-gray-800/50 p-9 rounded-lg shadow-md">
+                 <div class="g-fade-in bg-gray-800/50 p-9 rounded-lg shadow-md">
   <form id="contact-form">
     <div class="mb-4">
       <input type="text" name="name" placeholder="Name" class="w-full p-3 border rounded-md" required>
@@ -224,8 +224,20 @@
     <div class="mb-4">
       <textarea name="message" placeholder="Message" rows="4" class="w-full p-3 border rounded-md" required></textarea>
     </div>
-    <button type="submit" class="w-full btn-gradient text-white p-3 rounded-md font-semibold">Send Message</button>
+    <button type="submit" class="w-full btn-gradient text-white p-3 rounded-md font-semibold">
+      Send Message
+    </button>
   </form>
+</div>
+<!-- ✅ Success Popup -->
+<div id="success-popup" class="fixed inset-0 bg-black/60 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-500">
+  <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-3xl shadow-2xl text-center transform scale-75 transition-all duration-500">
+    <svg class="mx-auto w-16 h-16 text-green-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+    </svg>
+    <h2 class="text-white text-xl font-semibold mb-2">Message Sent!</h2>
+    <p class="text-gray-300 text-sm">Thank you for reaching out. We will contact you soon.</p>
+  </div>
 </div>
                 </div>
             </div>
@@ -245,33 +257,38 @@
     </footer>
 <script>
 const form = document.getElementById('contact-form');
-const scriptURL = "YOUR_GOOGLE_SCRIPT_URL_HERE"; // Replace with your Apps Script URL
+const popup = document.getElementById('success-popup');
+const scriptURL = "https://script.google.com/macros/s/AKfycbxX0AqEKEFo4Lb29E5bAemubjMnyQ1I5NxEBko37BhTIFZflRYJYFh6t-Qz9W6pLlL_-A/exec"; 
 
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  const data = {
-    name: form.name.value,
-    email: form.email.value,
-    phone: form.phone.value,
-    message: form.message.value
-  };
+  const formData = new FormData(form);
 
   fetch(scriptURL, {
     method: 'POST',
-    body: JSON.stringify(data),
-    headers: { 'Content-Type': 'application/json' }
+    body: formData
   })
   .then(response => response.json())
   .then(result => {
-    alert("Message sent successfully!");
     form.reset();
+    showPopup();
   })
   .catch(error => {
-    alert("Error sending message, try again.");
     console.error(error);
+    alert("❌ Error sending message, try again.");
   });
 });
+
+function showPopup() {
+  popup.classList.remove("pointer-events-none", "opacity-0");
+  popup.firstElementChild.classList.remove("scale-75");
+  
+  setTimeout(() => {
+    popup.classList.add("opacity-0", "pointer-events-none");
+    popup.firstElementChild.classList.add("scale-75");
+  }, 3000); // Popup auto closes after 3s
+}
 </script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {

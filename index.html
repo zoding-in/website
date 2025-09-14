@@ -20,7 +20,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="main.css" /> 
 </head>
-<body class="  text-gray-800">
+<body class="text-gray-800">
 
     <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 bg-black/90 flex flex-col items-center justify-center z-[200]">
@@ -101,7 +101,7 @@
                 <i data-feather="phone" class="w-5 h-5"></i> Call Us
             </a>
             
-            <a href="https://wa.me/9003140198" target="_blank"
+            <a href="https://wa.me/+9003140198" target="_blank"
                class="w-full bg-green-500 text-white p-3 rounded-xl font-semibold hover:bg-green-600 flex items-center justify-center gap-3 transition-all duration-200 shadow-md hover:shadow-lg">
                 <i data-feather="message-circle" class="w-5 h-5"></i> WhatsApp
             </a>
@@ -227,9 +227,9 @@
 </style>
     <main class="overflow-hidden">
         <section class="rounded-xl p-8 bg-gray-700/20">
-            <div class="h-screen flex items-center justify-center text-white text-center px-6 relative">
-              <div class="h-screen flex items-center justify-center text-white text-center px-6 relative">
+           <div class="h-screen flex items-center justify-center text-white text-center px-6 relative">
   <div class="relative z-10">
+    <!-- Logo & Heading -->
     <div class="flex items-center justify-center space-x-4 mb-6 g-fade-in">
       <svg class="w-12 h-12 md:w-16 md:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -239,23 +239,23 @@
       <h2 class="text-4xl md:text-5xl font-bold">Zoding Technologies</h2>
     </div>
 
+    <!-- Tagline -->
     <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 g-fade-in">
-      Want to Take Your Business Online? We Build Websites, Apps, and Software That Help You Succeed.
+      Building Smart, Scalable & Secure Software Solutions for the Future.
     </h1>
 
+    <!-- Buttons -->
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 g-fade-in">
-      <a href="./services.html"
+      <a href="./contact.html"
         class="w-full sm:w-auto inline-block btn-gradient text-white px-8 py-3 rounded-2xl text-lg font-semibold transition transform hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.7)]">
         Get Started
       </a>
       <button onclick="openModal()"
         class="w-full sm:w-auto inline-block bg-white/10 backdrop-blur-md text-white px-8 py-3 rounded-2xl text-lg font-semibold border border-white/20 hover:bg-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition transform hover:scale-105">
-        Book a Free Consultation
+        Request a Free Consultation
       </button>
     </div>
   </div>
-
-  <div class="scroll-indicator"><span></span></div>
 </div>
 
 <!-- Glassmorphism Modal -->
@@ -269,43 +269,44 @@
     <h2 class="text-3xl font-extrabold mb-6 text-center">Request a Free Consultation</h2>
 
     <form id="consultationForm" class="space-y-4">
-      <!-- Name -->
-      <input type="text" id="name" name="name" placeholder="Your Name" required
+      <input type="text" name="name" placeholder="Your Name" required
         class="w-full border border-white/20 bg-white/10 p-3 rounded-xl placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-white">
-
-      <!-- Email -->
-      <input type="email" id="email" name="email" placeholder="Your Email" required
+      <input type="email" name="email" placeholder="Your Email" required
         class="w-full border border-white/20 bg-white/10 p-3 rounded-xl placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-white">
-
-      <!-- Message -->
-      <textarea id="message" name="message" placeholder="Your Message" rows="4" required
+      <textarea name="message" placeholder="Your Message" rows="4" required
         class="w-full border border-white/20 bg-white/10 p-3 rounded-xl placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-white"></textarea>
-
-      <!-- Contact -->
-      <input type="text" id="contact" name="contact" placeholder="Your Contact Number" required
+      <input type="text" name="contact" placeholder="Your Contact Number" required
         class="w-full border border-white/20 bg-white/10 p-3 rounded-xl placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-white">
 
-      <!-- Submit Button -->
       <button type="submit"
         class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-bold hover:shadow-[0_0_20px_rgba(59,130,246,0.8)] transition">
         Submit
       </button>
     </form>
+  </div>
+</div>
 
-    <p id="successMessage"
-      class="hidden text-green-300 text-center font-semibold mt-6 animate-pulse">
-      ✅ Your request has been submitted!
-    </p>
+<!-- Success Popup -->
+<div id="successPopup"
+  class="fixed inset-0 bg-black/60 flex items-center justify-center hidden z-50">
+  <div
+    class="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl p-8 max-w-sm w-full text-center transform scale-90 opacity-0 transition-all duration-300">
+    <h2 class="text-3xl font-bold text-green-400 mb-4">✅ Success!</h2>
+    <p class="text-white text-lg mb-6">Your request has been submitted successfully.</p>
+    <button onclick="closeSuccessPopup()"
+      class="bg-gradient-to-r from-green-500 to-emerald-600 px-6 py-2 rounded-xl text-white font-bold hover:scale-105 transition">
+      Close
+    </button>
   </div>
 </div>
 
 <script>
   const modal = document.getElementById('consultationModal');
   const modalContent = document.getElementById('modalContent');
+  const successPopup = document.getElementById('successPopup');
   const form = document.getElementById('consultationForm');
-  const successMessage = document.getElementById('successMessage');
 
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNjR3xpKHK2U9gBocm2FT3kOYkq3q_s3Mawg49X3ItGp6gh02TXpEZ-abv33qiFhYaHw/exec";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz6OCU6GqaIbLLXx2a93DeWRuQz1Wd5RoAXTDtxQ3ExfnlVqedQsQtgv7Yz71dIn9u6DQ/exec";
 
   function openModal() {
     modal.classList.remove('hidden');
@@ -321,34 +322,48 @@
     setTimeout(() => modal.classList.add('hidden'), 300);
   }
 
+  function showSuccessPopup() {
+    closeModal();
+    setTimeout(() => {
+      successPopup.classList.remove('hidden');
+      const popupContent = successPopup.querySelector('div');
+      setTimeout(() => {
+        popupContent.classList.remove('opacity-0', 'scale-90');
+        popupContent.classList.add('opacity-100', 'scale-100');
+      }, 50);
+    }, 300);
+  }
+
+  function closeSuccessPopup() {
+    const popupContent = successPopup.querySelector('div');
+    popupContent.classList.remove('opacity-100', 'scale-100');
+    popupContent.classList.add('opacity-0', 'scale-90');
+    setTimeout(() => successPopup.classList.add('hidden'), 300);
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const formData = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-      contact: form.contact.value
-    };
+    const formData = new FormData(form);
 
     try {
-      await fetch(GOOGLE_SCRIPT_URL, {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        body: JSON.stringify(formData)
+        body: formData
       });
 
-      form.reset();
-      successMessage.classList.remove('hidden');
+      if (!response.ok) throw new Error("Network response was not ok");
 
-      setTimeout(() => {
-        successMessage.classList.add('hidden');
-        closeModal();
-      }, 5000);
+      form.reset();
+      showSuccessPopup();
+
     } catch (error) {
+      console.error("Error submitting form:", error);
       alert("Something went wrong. Please try again!");
     }
   });
 </script>
+
 
                 
                 <div class="scroll-indicator"><span></span></div>
@@ -1055,10 +1070,5 @@
     </script>
 </body>
 </html>
-
-
-
-
-
 
 
