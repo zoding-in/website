@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoding Technologies - Smart, Scalable & Secure Software Solutions</title>
-    <meta name="description" content="Zoding Technologies is a leading software development company specializing in custom web, mobile, and AI solutions. We help businesses transform with cutting-edge technology.">
-    <meta name="keywords" content="software development, web development, mobile apps, AI, machine learning, cybersecurity, Zoding Technologies">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    
-    <!-- Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="main.css" /> 
+  <title>Zoding Technologies | Smart, Scalable & Secure Software Solutions</title>
+  <meta name="description" content="Zoding Technologies is a leading software development company offering scalable web, mobile, and AI solutions. Empowering businesses with innovation and security.">
+
+  <meta name="keywords" content="Zoding Technologies, Zoding, zoding, tech, software development, web development, mobile apps, AI solutions, machine learning, cybersecurity, custom software, IT services, scalable solutions">
+
+  <link rel="icon" href="./imeges/logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="./imeges/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./imeges/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./imeges/logo.png">
+
+  <meta property="og:title" content="Zoding Technologies | Smart, Scalable & Secure Software Solutions">
+  <meta property="og:description" content="Leading software development company specializing in web, mobile, and AI solutions.">
+  <meta property="og:image" content="https://Zoding.com/preview-image.jpg">
+  <meta property="og:url" content="https://Zoding.com">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zoding Technologies | Smart, Scalable & Secure Software Solutions">
+  <meta name="twitter:description" content="Leading software development company specializing in web, mobile, and AI solutions.">
+  <meta name="twitter:image" content="https://Zoding.com/preview-image.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body class="text-gray-800">
 
@@ -90,18 +107,6 @@
         </div>
     </div>
 
-    <div id="contact-popup" class="modal hidden opacity-0 fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[100] p-4">
-        <div class="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md mx-4 text-center">
-            <h2 class="text-2xl font-bold mb-4">Connect With Us</h2>
-            <p class="text-gray-600 mb-6">Have a question or a project in mind? We're here to help!</p>
-            <div class="flex flex-col gap-4">
-                <a href="tel:+9003140198" class="w-full bg-blue-600 text-white p-3 rounded-md font-semibold hover:bg-blue-700 flex items-center justify-center gap-2"><i data-feather="phone"></i> Call Us</a>
-                <a href="https://wa.me/9003140198" target="_blank" class="w-full bg-green-500 text-white p-3 rounded-md font-semibold hover:bg-green-600 flex items-center justify-center gap-2"><i data-feather="message-circle"></i> WhatsApp</a>
-            </div>
-            <button id="close-contact-popup" class="w-full mt-4 text-gray-500 hover:text-gray-700">Close</button>
-        </div>
-    </div>
-
     <!-- Floating Action Button -->
     <div id="fab-container">
         <div id="fab-options" class="flex flex-col items-center gap-3 mb-3 fab-options opacity-0 -translate-y-4">
@@ -116,18 +121,54 @@
 <header id="main-header" class="bg-gray-800/50 fixed top-0 left-0 right-0 z-50 rounded-lg transition-all duration-300">
   <div class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#home" id="header-logo" class="flex items-center space-x-2 cursor-pointer z-20">
-        <img class="logo" src="./imeges/logo.png" alt="Zoding Logo" style="width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid #2563eb;">
-        <h1 class="text-2xl font-bold text-white">Zoding Technologies</h1>
-      </a>  
+       <!-- Logo Section -->
+<a href="./index.html" id="header-logo" class="flex items-center space-x-2 cursor-pointer z-20">
+  <img class="logo" src="./imeges/logo.png" alt="Zoding Logo"
+    style="width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid #2563eb;">
+  <h1 id="company-name" class="text-2xl font-bold text-white"></h1>
+</a>
+
+<!-- Animation Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const companyName = "Zoding Technologies";
+    const target = document.getElementById("company-name");
+    let index = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      if (!isDeleting && index < companyName.length) {
+        target.innerHTML = companyName.substring(0, index + 1);
+        index++;
+        setTimeout(typeEffect, 100);
+      } else if (isDeleting && index > 0) {
+        target.innerHTML = companyName.substring(0, index - 1);
+        index--;
+        setTimeout(typeEffect, 50);
+      } else {
+        isDeleting = !isDeleting;
+        setTimeout(typeEffect, isDeleting ? 1500 : 300); // Pause before typing/deleting
+      }
+    }
+
+    typeEffect();
+  });
+</script>
+
+<!-- Optional Styling -->
+<style>
+  #company-name {
+    display: inline-block;
+    white-space: nowrap;
+    letter-spacing: 2px;
+  }
+</style> 
 <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center space-x-6">
         <a href="index.html" class="nav-link text-white hover:text-blue-600 ">Home</a>
-        <a href="about.html" class="nav-link text-white hover:text-blue-600 active">About</a>
+        <a href="about.html" class="nav-link text-white hover:text-blue-600 ">About</a>
         <a href="services.html" class="nav-link text-white hover:text-blue-600">Services</a>
-        <a href="products.html" class="nav-link text-white hover:text-blue-600">Products</a>
-        <a href="careers.html" class="nav-link text-white hover:text-blue-600">Careers</a>
+        <a href="products.html" class="nav-link text-white hover:text-blue-600 active">Products</a>
         <a href="contact.html" class="nav-link text-white hover:text-blue-600">Contact</a>
       </nav>
 
@@ -146,7 +187,6 @@
     <a href="about.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">About</a>
     <a href="services.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Services</a>
     <a href="products.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Products</a>
-    <a href="careers.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Careers</a>
     <a href="contact.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Contact</a>
   </div>
 </header>
@@ -232,9 +272,9 @@
 <footer class="bg-gray-800/60 text-gray-300 rounded-xl py-12 relative z-10">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div><h3 class="text-lg font-bold text-white mb-4">Quick Links</h3><ul class="space-y-2"><li class="hover:text-white"><a href="Index.html">Home</a></li><li class="hover:text-white"><a href="About.html">About</a></li><li class="hover:text-white"><a href="service.html">Services</a></li><li class="hover:text-white"><a href="careers.html">Careers</a></li><li class="hover:text-white"><a href="blog.html">Blog</a></li><li class="hover:text-white"><a href="contact.html">Contact</a></li></ul></div>
+                <div><h3 class="text-lg font-bold text-white mb-4">Quick Links</h3><ul class="space-y-2"><li class="hover:text-white"><a href="./index.html">Home</a></li><li class="hover:text-white"><a href="./about.html">About</a></li><li class="hover:text-white"><a href="./services.html">Services</a></li><li class="hover:text-white"><a href="./contact.html">Contact</a></li></ul></div>
                 <div><h3 class="text-lg font-bold text-white mb-4">Follow Us</h3><div class="flex space-x-4"><a href="#" class="hover:text-white"><i data-feather="linkedin"></i></a><a href="#" class="hover:text-white"><i data-feather="instagram"></i></a></div></div>
-                <div class="md:col-span-2"><h3 class="text-lg font-bold text-white mb-4">Subscribe to our Newsletter</h3><p class="mb-4">Subscribe to get the latest tech updates.</p><form class="flex"><input type="email" placeholder="Your Email" class="w-full p-2 rounded-l-md text-gray-800"><button type="submit" class="btn-gradient text-white px-4 py-2 rounded-r-md">Subscribe</button></form></div>
+                <div class="md:col-span-2"><h3 class="text-lg font-bold text-white mb-4">Subscribe to our Newsletter</h3><p class="mb-4">Subscribe to get the latest tech updates.</p><form class="flex"><input type="email" placeholder="Zodingtechnologies@gmail.com" class="w-full p-2 rounded-l-md text-gray-800"><button type="submit" class="btn-gradient text-white px-4 py-2 rounded-r-md">Subscribe</button></form></div>
             </div>
             <div class="mt-8 border-t border-gray-700 pt-6 text-center text-sm"><p>&copy; 2025 Zoding Technologies. All Rights Reserved.</p></div>
         </div>
@@ -324,7 +364,7 @@
 
         const productsData = [
             { id: 1, name: 'EmbeddedSystem369', short_desc: 'Automate salaries, tax, and compliance.', imageUrl: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxEREhUTEhIWFRUWFRcSFhgQExYQFxUVGRgWGBgYFxUYHyogGBolHhUXITElJSkrLi4uFyAzODMtNygtLisBCgoKDg0OGxAQGjAmHyUtLS41LS0uLS8vLS8rLS4tLS0tLy0vLS0tLS0tLS0vLS0tLS4tLS0tLS0tLS0tLS0tLf/AABEIAKYBMAMBEQACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAAAwIEBQYHAQj/xABQEAABAwEDBgYMCgcHBQAAAAABAAIDEQQSIQUGEzFRYQcXIkGh0RQyUlNUcYGRkpOx8BYzNEJypLPS4eMjYnN0orLBJDVjgpS08TZEZIPD/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAEEAgMFBgf/xAA6EQACAQIDBQUGBgIBBQEAAAAAAQIDEQQhMRIUQVFhBRNxgaEVMlJikfAiM7HB0eFCQ/EWIyQ0Uwb/2gAMAwEAAhEDEQA/AOWL0x1AgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgCAIAgMnkvIss7XObQAai7C8dgVetiYUmkzmY7tWhhJRhPNvlwXNmalzXboeTXS3W63C7ewvD2qosc+8z904kP/0M95tK3d3fB3tnb9uBgsq5Iks5F6hB1Obqrzjx+1XKOIjV0O9gO0qOMT2MmuD1twf3oR2axhwvOcA3EK9To7S2m7IxxWPdKfdQg5S1IbTZyw0JBwrgsJwcHZlnC4qOIi5RTWdsymAtvC+CW1xDTQkbitFRTcHsOz4X0LcbXW1oSNdFhVr+3q7lDGPDAYdtrxWuSrXdmtMsn73N56dCU4ZXT19P5F6Knau+Mr2w+L7nV229LVr6r3eX+XPXTp6i8OT19P5D3RcqjX9vVvKGEeOBw7bekVWurtaZ5P3uaz06BuGdk9fT+RI6Ll3WuFXC5VwNG41DsMTqSCrfh2mtM8tXwtnkg3DOyfTw6lut5gEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAb/kOxthhq0uN5oeQTXlU5tmzyBcPEVHUqWfDI+fdp4qWKxOzOy2W436X4/qaxZ8v2jSh14uq4cgAUIJ1Acy6UsJS2LW8z1NXsbB9w4qNrL3uPi39o2LOewNkjLyXAsBLQDh5QqGDquM1FcTznYWMnSxCpRStN589DWY3sewMeaU8mrUvSRcJRUZPQ9HWoV8PXlWoRTT4cbkdsmDqAagOcLCrNSsloixgMJOjtSqW2pPgWpYFpsdEpMaixBQQgOg5M4KbQ+MPnnZA5wqGFpkcB+tQgA7sVSljFe0VcqSxSTyRd8UZ8OZ6k/fWO+P4THe+g4oz4cz1J++m+P4RvfQcUZ8OZ6k/fTfH8I3voDwRu5rdHXfER03k3z5RvfQ0jOLN6ewzGGYCtLzXNNWvbtafcq3SqKorxLVOamroxoiW2xmVaMJYk8MaWIIyKKAeKAEAQBAEAQBAEAQBAEAQBAEAQHoCkCm5AZLK1pge1oibQjXRt2gpqO1VaEKsW9tnSx1bDVIRVFWfhbLl1J8g5CltT9HExr3Boe4yOLWMbhSpGNTqw27iVtqVY01eRyZ1FBXZnuLe2/wDj+PSS7KV1eXx7sFo32nyZq3qBmsj5p2izMdeZHVzqkxPc4U5qhwwA8utUcVU72Sa0POdtYetiqkJU80sraW6+BHFkiPS4RsElTjTnxqfxWjvZtbF8jj97jKkt0c3ytfLL1tkUZYzUtFpLbjGBwBxle5tAdzQrWDrKlfa4ne7Dp1cLGfe5J8PDjf7/AJseLu2bLP6yXbWmryeLfiru/U+TO9vUOpGeDi291B6x/wB1N+p9RvUOo4t7b3UPrHfcTfqfUb1DqQszCtJe6MS2YvaAXMExLmg6iW3agJvtPkxvUOpkMlcH9sinhkcYS1kscjgHuJIa4OIHJ2BYzxlOUWszGWJg4tHX5Ab14C8DTV7FzotWsc8tzA7mafKFntIiw0Du5KbSFhoHdyU2kLAQO7kptIWNP4Ssgy211nZCWXomyXy9xb22joMAe4PnC24avGntX4lvD1VTvc5PlKwSWeV0UouvaaEVrrFQQecEEFdWE1OO0i/GSkrotVkZBAePFVDBAsSAgCAIAgCAIAgCAIAgCAIAgJWM2rJIFakkIAQgOhcFLaTT/sodddm/32UGC5+PWUSni1kjY87s8WZPfG10LpNI0uBa4NpQgY18aoRhtFFuxhONFngc3pDqW7danJ/Rmvvoc/Ujk4SonYmwy+kB/RRutTk/oyO9p816FfGizwOb0h1Kd1qcn9GT30Oa+p7xos8Dm9IdSbrU5P6Md9Dn6jjRZ4HN6Q6k3Wpyf0Y76HP1HGizwOb0h1JutTk/ox30OfqYiyZ32SK1SWtthtGlkF11ZAWit2tG0wJujzKXh6trWf0ZHfQ5+pl+NFngc3pDqUbrU5P6Mnvoc/Uok4Uox/2s7fFIG/0WLw81m16MlVYvRkfGpH3m0eub1LHunzJ20ONSPvNo9c3qTunzG2hxqR95tHrm9Sd0+Y20ONSPvNo9c3qTunzG2jaczcux26J8rI3R3ZDGb7g4k3WurUfSWEo7Jknc5/wij+2z/Qi27G76eddbB/lLzOnhvyzVCMK823m86tG88QBAQOGKxIPFACAIAgCAIAgCAIAgCAICpgxUoEyyJCAIAgOhcFFNLPTvUOqmumOrf5duNVz8fpEp4vRF1nzk3srKVggvXdI2QXrt+lOVW7UV7Xaq2Gqd29tq9jm1YbcXG9jL8Vp8M+r/AJi6ntn5PX+ij7NXxeg4rT4Z9X/MT2z8nr/Q9m/N6DitPhn1f8xPbPyev9D2b83oOK0+GfV/zE9s/J6/0PZvzeg4rT4Z9X/MT2z8nr/Q9m/N6DitPhn1f8xPbPyev9D2avi9BxWnwz6v+Yntn5PX+h7NXxeg4rT4Z9X/ADE9s/J6/wBD2avi9C1yrwXOEMhbag5wY4hphuhxAJALr5pjz0K11O1VUg4uGvX+jKGA2JKSlp0OQ2ixvikMUguva4tcDQ0NK83j6VUh+K1izLI97H3j0Qtvdvn6GG0edj7x6ITu3z9BtFEkd3fUHmA5lhKOyZJ3OrcDfySb94P2USqVdTfHQ2nL9jslgD7dLCJrQ8sZGJKENcG0AaObBpJOvmCs4SE67VJOy1ZFfFOlSLzK2cEkWTorUWMe57YS9jgbhDwLwA5teGvyrKlhYzxMqV8lf0NE68o0VU8DTM9s0rPPZBlGwsucnSSRtwaW6nEN1Nc2hqBgaHn17KdWdOo6NTw+/E6eExW2lfRnL1eOgRSDFYsgoUAIAgCAIAgCAIAgCAIAgJIlKBIsiTO2PNO1Sxtka1l14vNq+mC4+I7dwdCpKlNu61yN0KE5q6JfgXbNjPT/AAWn/qTAc39GZbrU5D4F2zYz0/wT/qTAc39GN1qcjb8wslS2WSUzU5ccbW3XF+LRQ+JVcX29gqiWzJ5dGV8Tga0krL1LrLf99ZL/APb/ACuVqPuM43Ez2fmcByXAJooWPMtouuD3OAq6MuLsDr/RjZ1zFXMWzRRwyWnwOH05PfnWfd34mO0jzjktHgkPrJPEmx1G0iSHhgtT3BrbHEXOIa0B8lS4nADyrGUVGLlJ5IlO7slmZi1Z+ZRglgZaLDCxs0jIw5srngXiGkYHtgHeXmrRVsNi6OJv3Ur26W8zfVw86VttanR22drBJd5N5xe44nlENqde4bFu5Got6Dvx8x61l5EeYoO/HzHrTyHmTWj4h2N7kOx24FYMyR86Z5f3hN9Jn2Mat0NI+ZpqGIkdVzW8xIBpvK2VZtZIUIKc4p8WkT5QsL7O4Y1YTgefyjatVKrmdHtTsueDlm7xej4+a+0W1p1jxO9i31NV5nJjodX4E/k8n71/84lRq6lmOhumfuRH2uzXYsZI3iRrdV7AgtqeehqPErXZ+IjRq3lo8jRi6Lq07LU5w7KlutMbMnht64boYGBr+RgA8nUG014asSu33NClJ4i+vG+WfLx/4OX3tapFUbfaOq5GyWLNY2wPIIbG4PPMS685/kq4rz2Ird7Wc1xf/B2aFPu4KPI+am6l2Tunj21UMEKxICAIAgCAIAgCAIAgCAICuM4qUCVZEnZc0hWxQV72PaV8w7Z/9+r4/sXaLtFWMhJZjrbiuak3oW41VpIois5OOobUs7XJlUUcuJdMYBqUPQ0OTbzNXt7icsZLqa4za/ouX0On+W/I8o9S84dPkUX7237GRZ09fL9zCWhxqxR1NdntVyhG7uaJvKxTao6O8eKirC0vEmDuiSCV9nlZIw8pjmvbUVFQa0I5wtOIoKUXTlo1YzpVHGSktUbJbs7ZbdPZGOjbG1lphfRpLrzr7RWp1ChOG9czA9mQwjlJSbbVvIvV8ZKvZWsj6Fl1Owrjq24BW+RWLTHvKy8yBj3lPMElp+Jfhd5DsNmBWDMj50zy/vCb6TPsY1boaR8zTUMVJHiHDWKHHct9SntGFKo4SUuTuJL8j78hqffAbAsIUbG3E4upiJupUd2/vIjtOseJ3sWVTVeZojodT4Gz/ZZv3k/ZRKjV1LMdDpdhyzDLI6EPGmYAXMODqEAhzR84Y82pYuDUdrgbNl2vwNGzayfM3K8r3RSBhktBvOjcGkEupyiKYrtYqrB4KMVJXtHK5yaFOSxLbWWZc8J2ekcML7LA8OmkBY8tNREw4OqR88ioprFammFefhcO5Pblp+p3qFFt7T0OLLql8ICl7KqGgREKCDxQAgCAIAgCAIAgCAID0FSCdZEnVs1sv2OOywsktDGuawAtJNQcda8F2l2ViquMqVI024t5dSxCqlFIzIzrsHhMfnPUqq7Jxi/1MjbR78LLB4VH5z1KfZON/wDkxtxJbLlWzTEiGZriACQ2uAOoqvW7JxUVfu2id5hH3ma7bf74yX45v5XL19P8t+R556mR4bbO+SxxBjHPItTSRG0vNNDIKkNqecLOH7fuYtHKYclztAGhl3/on6/MunDZjG10VJXb0KnZMmNKwS4GvxT+pS3B6tEK64EdqyXO5vxEtRj8U/qWFXZlHVGULp6FGRcm2gWmAmCUATxEkxPAAEjSSTRUm1YsRTufTsup+NMdezALRyMyzoO/Hp61l5EeYoO/Hp608h5kto+Idje5DsduBWDMj5wz3dS3z7bzPsY1Zpu0UaprMw2mO0+YLZtvma9noNMdp8wTbfMnZ6FLn11mvmUOV9RY6xwN/JJv3g/ZRKtV1N0dDX+ENxFumINCGQkEGhBo2hGGvyj+i6eD/KXmdPDfl/UwcmXrY5t11qnLdVDPIRTxVxW7uofCvobdiPJGOWwzCAIAgPHtqoYIFiQEAQBAEAQBAEAQBAEBNGcFkiSpSAgCA6BwWxB0s9RX9FDtHN4/fdqVDH6RKmL0RmcsMAy1ksDD43+VyoR9xlDidDvtjc8XpDecX4uqG1DeS3Y0U1byiWRDKuzW/r+cb+voU7Iuedmt/X842UTZFz3s5v63Rtqo2Rc87Nb+v5xsop2RcrszBQ4udpHk0kcDTDtW7G8nVvKxsSS9h/4Xs9/+FG0uYt0Pew/8L2bfcptrmLdCG1ikUgpSjDhhhhVHzCPn3OWwG05QlhhY91ofLG1gvMaws7HaSDe1OwrWtKA863wyjd6GEs2TcWOVPB2/6iHrTvYGOzIcWOVfB2/6iLrTvYDZkOLHKng7f9RD1p3sBsyOg8HGbNrscEjJ2BjnTXwA9snJuMbWrTTW0rVUlFvI2RvYxGeGZVutFqlkjiDmubGAdKxlS0NrgXYauev9Vew+JpQp2Zdo1oxhZv0Oc2uNrbraOEjbzZb5BF8PcBcoNQAANScQVfTbz4cC5F3LdSZBAEAQBAQFYEHiAIAgCAIAgCAIAgCAliWSJM3kjNe22thks8BkYHFlQ5jeUACRynDaFrnXpwdpM1yqwi7Nl98AMqeCO9ZF99Yb3R+Ix3inzHwByp4I71kX303uj8X6jeKfM3Pg8zatlmkmM0JYHRxtbV0ZqRr7U++8qnjK0JpbLK2JqRnbZZk8q5DtL8qWCdsRMUOk0jrzaNvNcBhWp18wVRSWy0VDdpHyV5IBG/8A5RbIzKb03ct9/Kp/CMxem7lvv5U/CMxem2N9/Kn4RmL02xvv5UtEZk8JdyL2BvY08qxdrOw5GiZ1WzQutMlfi9K/Wfm1P9Feg1Gkn0PJV4ueLlBPWVvUtM37c6aOGR3Jc66XAE8l1aOHkIIWSe1Tv0Nco93iNhPJSX0udDyp2s30T7CucvdR7J6nEcmf9Rs/aj/aFbv9Rh/kdNlZNaLRO108tniiLI4hDcYZHGNj3Sl72m8AX3A0YVY6ta0FN4ijF2clfxNypTauky6yJaZX2f8AT10jHyROcG3NIGSOY2QN5r7Q12GHKwwWyE4zzg00YSi45NFxfHdP9/Kt1uiMStjgaC8/X1KGgYeyZzwvkYA2ernBovR0FXGgrjgMVUWLhLKz+h1qnY9aEXJyjkm9eXkcMy18om/ayfaOXpqfuLwJp+798kWSzNgQBAEBTI5QwQrEgIAgCAIAgCAIAgCAICWJZIk6rmdI5uQ7S5ri0iV9C0lpHxWojUqdk8ZBP71OP2k2lJrkYWLs52uaVv6N0tZJ3M5ApQmpqAS5oBOBLh4113u6/wAU87ZLj/XE4C798XpfU2bg8ltHZUrJ3ykiEm7I5zvnMo4Amhw1ELn9pxpdzGVNLXh5lrBOp3jU76G713yLkfQ6RDbrVomBxErquu0YLxGFakV1LCUrcDRiK/cxUmm/AptFqLrO17b7Ku+fyXjFwxp4lje+ZsoVe9gp2avwepfXG9+Pn/FbbvkZnrIQdUpPi/5UX6CxTNG1waNMRSuIOuu3FUcZg5Yhpqbja+nG9v4LOHrqle8U78zyzRtY6umLtxOHtWrDdnzo1Nt1JS6P/kzrYqNSOyoJF+xwJaRiL3N4iujwZVOacILhSdppSSdkJrqo+ZrXV/ylyuf6UvA8s1/5s2uDk/om/wBS3zVeKvYDUMtbxhiKPeJhiP2qyj7sl4/z+5pqp97Tk+Kj6ZfsdPyp2sv0Tt2Fc9e6j171OI5M/wCo2ftR/tCt/wDqMf8AI67NGbzjdJrWmHSvLV6FTv5vYbTvbL1OxSqQ7uK2ktCWAFsZrVuOzHmXT7LpyhStJWd3qUsbOMql4vgU6X/Ed5vxXUt0KhZZShkkLLlqfFdJLrrL18G7QHlClLp9JYuPQu4TE0aKkqlNTvpd2tr0f2jIxzC8OWTjqptUtO2hRPnLLXyib9rJ9o5dyn7kfA7FP3fvkiyWRsCAIAgIHGqxIPFACAIAgCAIAgCAIAgPQKqQTgLIk6lmdG52Q7S1rS4mV9A0FxPxWoDWqV0sZBv71OP2km1JLkYNot4YY9HOW8ntonuIDTeDQSMG1ANNVWhdhvD7W1dX8VxPPrv0rWZs3B1BaOypXzMlqYSL0rXgk3mYXnazQdC5/acqfcxjBrXhbqW8FGfeNzT04m9esXH+h0h6xPoCHK3xI19sO216ytctSUXRkZ3orZZ8yMipk7W4iMhRZviLmLytllkErY+xZH3mtdejFWi8SKE7qKLs6mE7M3ik6neRja+T1yMrMGNNNHXxKVd8Tl5FxZiDcoKcrUebttqh8SVwNGzqyHJaJ8Y3FjbQZSDE57ZAA8AaqUq4Hn1K1DZlCKbWR5isq0K9VxhLO6TSfPXQtsj5Akhme5kTmskfE642FzA1zQGuOApQgN5hqO1ZfgjtWazNVq9R01KErp6tPS9+XDM6DlTtZvonZ3JVFe6j1r1PnvOHKBsuUZbRE8ieOaMtaYw9lw2doLiS7E8qlKc9ahWIZxs9DXLJ3OiZrZ5zT2ZkkskQeS8OGDKUeQOTXDAArTOKTsjJMy3wkd3yL0mrGyJHwkd3yL0mpZAkiy3K4VaWOGrk8oV8Y8iWQzNPzmz9ttntEkbDGA1rCKxgnlAbSCdfMF0MPhadSntO5co0FON3+v8ARzm1va6j75c9950lWBgDi9xwIPKqKHUKE05lfWWVsi5FWLdZGQQBAUyalDBCsSAgCAIAgCAIAgCAID1oqpBM1tFJJ6pBn8g54WyxRmKB7QwuL6Oja/lEAHE48wWiph4VHeRqnRhN3ZkuMzKffWepYte5UuRhu1McZmU++M9SxNypchu1M2rMnO222t8rZHsIYyNwoxrcXDHm99+tVcXQhTS2SviKUYWsZXLud7rG5rZb5LwXDRRaQUBpjTUqai2VSaPLDrRE11TdcA8BzQw7qjmUNWJM38IW97PpDqS4Hwgb3s+kOpLgfCFvez6QS4Hwgb3s+kOpLg8OX29w7yOHUpuB8Idz/Sb1e9UuuQz5nvwi3P8ASG3xeRRlyGfMhny2HNc266rmkVJGylcApbBwnPSySOt891jjVzKENND+ij59XMtynGMLydhGlOrNRpq76FizNyc4kMH0nVPQCq77QorS51IdgYuSu7Lxf8JkVpyFMwVuBw2s5XRr6FnTxtKeV7eJpr9j4uir7N10z9NfQtOwn96f6DupWbnLOs8D8Tm2WYOaW/2gmjgW4aOLatNXU2x0Nb4Rfls/0Ituxu7qXTwf5S8zp4b8sxmTMlRSQvkdJRwrzijaDCo56rCtiZwqqCWRycd2nXoYuFGELp253d+XgYZXTuhAEB44VUAhWJB4gCAIAgCAIAgCAICdraLIk9UgIAgCAIDf+CL4y0fQZ/M5c/H6RKeL0R0yq5pSIX2ZpNTXHegPOw2bD50A7DZsPnQDsNmw+dAOw2bD50A7DZsPnQDsNmw+dAOw2bD50A7DZsPnQGlZdldJadEXXWNcI23jg0GlXHz18y5deTnV2X4HtOzKUKGDVSKu2ru2r6BmQgZ3Q6dnJbfvU16sLtcDjt1KFh/+44bRL7Uawyr9083a373t+2pbMyaDA+bSt5LrtzWTiBUGu+urmWCpfgc7+RYljGsTGhsPNXvy+/E2XM22PfG5jiSGEBpOwg4eSnSruDm5RafA8/27h4U6sZx/yvfxXHzNgqrZwjkHCL8un+hF7G7/AOh/quxg/wApeZ0sN+WjU1aN4QBAEAQFL2VUNAiWJB4gCAIAgCAIAgK4xipQJVkSEAQEkELnuDWipNaAbhU9AWurVhSjtzdlz8cv1MoQlN2isyuOySOuXWk363NXKu66eJa54qjDb2pJbFr9L6X8TKNKcrWWunWx5HZXuu0aTfJa3VyiNYUzxNKG1tStsq76J6EKlN2stdC7yVParO4SQFzHOJiBbQ3jztIOB5tawq1qDvGbWS2n0XMxdBzSutXbzMo/O7KgBcZ3ABxjJ0cXbDEjtVhGGGlLYWttrjpzNbwkUruOV7eZH8Nso+En1cX3Vt3Wl8P6mG70+RNY897bfbpZ3Oj1ODWRg0IIwIaDv1osNSWaiV8VhNujKNLKTWTJcpZ62kOAs0zmsA+c1jqnGpF4EgKZYenJ3aNHZ2CnSo7NfN353svEtPhtlHwk+ri+6o3Wl8P6l/d6fI2TMLLVutdpIknLomMLni5GKk4NFQ2oxx/yqtiqVKnDJZs0V6cIRyWZv8kb/mv84HtoucUy2kklbrJ8wQFHZT+66AgOc5bzmyhBaJIjaXBodVp0UTuQcR83HA+cLq0aNKcFKxfpUqcop2MY3OF73F07zITSpDGtIoP1aA7PeiqYzsqNX8VLJ+jOzgcbu8e7a/D+hkYrQxzL4PJxNThqNDrXnqmHqQqd01+Llqd6FeE4d4nlzLaXK8LfnXj+qD7SrlLsnETf4lsrr/BVqdo0YLJ38CCDOm1R1EU5jaTeutiYcaN53Ak8/m34ego4CjSgo2v15nn8VLeZ7c1/RKM87d4W71EW07tlD5aLbutL4f1K270+Rg7Za3Suc57i97zee59KuNAANwGI8VMBSi3xioqyNqSSsi2UkhAEAQBAEBS9tVDQIisSDxAEAQBAEAQEkXOskCRSSEAQBAEAQBAEAQBAEAQHXuDTJehsgkIo6Y6Q7bgqGDxUq7/OuRjKm1UtyOdiZ7U7cjbVUK4QEMllaeaniwQHPOFDIxaI7QMQDonYbalhP8Q8oXQwM9YeZcwk9YnPV0i6TPtLixsfzW1NNpJJqfOq8cPCNWVb/J+mVsjdKvJ01T4L+SFWDSEAQBAEAQBAEAQBAEBHKFiyCNQAgCAIAgCAkiKlAkWRIQBAEAQBAEAQBAEAQGdyBmna7ZddFETEXiNzw5nJxF4kE1wBrqWirXhTybzNU60YZPU7jFYSxoa1tGtAaBhgAKALit3d2cu9yvsZ/c+xQB2M/ufYgHYz+59iAx+X8iOtNnlhLe3abtaYPGLT6QC2UqmxNSM6c9mSZxDLGQbTZLvZERjv1u1cx1btK9qTtC7UKsJ+6zpwqRn7rMathmEAQBAEAQBAEAQBAEAQEcpUMgjWICAIAgPQgKr47kfxdai3UgB47kfxdam3UFWm3Dp60z5kjTbh09aZ8wNNuHT1pnzA024dPWmfMDTbh09aZ8wNNuHT1pnzA024dPWmfMDTbh09aZ8wNNuHT1pnzA024dPWmfMDTbh09aZ8wZvN3PC1WEPEBYA8guD23xUVFRU4HHoGxaatCNT3jVUpRnqZjjUylth9V+K17nT6mvdYDjUylth9V+KbnT6jdYDjUylth9V+KbnT6jdYDjUylth9V+KbnT6jdYDjUylth9V+KbnT6jdYGv5fzjntsgknulwaGC6C0AAk4AHaSt1OkqatE3QpqCsjGabcOnrWzPmZjTbh09aZ8wNNuHT1pnzA024dPWmfMDTbh09aZ8wNNuHT1pnzA024dPWmfMDTbh09aZ8wNNuHT1pnzA024dPWmfMDTbh09aZ8wNNuHT1pnzBTfHcj+LrS3UgXx3I/i61FuoF4dyOnrSwKFJIQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQBAEAQH//2Q==', videoUrl: 'https://cdn.pixabay.com/video/2020/03/17/33333-403426161.mp4', full_desc: 'Our comprehensive Payroll Management System simplifies and automates your entire payroll process. From calculating salaries and deductions to generating payslips and ensuring tax compliance, our solution is designed to be secure, accurate, and incredibly user-friendly.', features: ['Automated Salary Calculations', 'Tax Compliance Engine', 'Employee Self-Service Portal', 'Detailed Reporting & Analytics', 'Leave Management Integration'] },
-            { id: 2, name: 'Glompsgrap', short_desc: 'Reduce wastage and optimize food distribution.', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr5ojJBMx5S9ttVo9_bdPJBdaArf4Qh6qY6Q&s', videoUrl: null, full_desc: 'Revolutionize your food supply chain with our Smart Food Management System. Leveraging AI and IoT, this platform optimizes inventory, reduces wastage, and ensures transparent distribution from source to consumer. Ideal for restaurants, hotels, and large-scale food businesses.', features: ['Real-time Inventory Tracking', 'AI-powered Demand Forecasting', 'Wastage Reduction Analytics', 'Supply Chain Transparency', 'Automated Ordering System'] },
+            { id: 2, name: 'Glompscrap', short_desc: 'Reduce wastage and optimize food distribution.', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr5ojJBMx5S9ttVo9_bdPJBdaArf4Qh6qY6Q&s', videoUrl: null, full_desc: 'Revolutionize your food supply chain with our Smart Food Management System. Leveraging AI and IoT, this platform optimizes inventory, reduces wastage, and ensures transparent distribution from source to consumer. Ideal for restaurants, hotels, and large-scale food businesses.', features: ['Real-time Inventory Tracking', 'AI-powered Demand Forecasting', 'Wastage Reduction Analytics', 'Supply Chain Transparency', 'Automated Ordering System'] },
             { id: 3, name: 'Irobotics', short_desc: 'Real-time attendance with analytics.', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSakOzOEMmAfiJ8uiXGSfXHpL9nrpZ2H4WvyQ&sv', videoUrl: 'https://cdn.pixabay.com/video/2023/07/22/173907-848443229.mp4', full_desc: 'Monitor your workforce with our intuitive, real-time Attendance Dashboard. Integrate with various biometric and mobile check-in systems to get live updates, generate insightful reports, and manage leave requests seamlessly. Simplify your HR tasks and boost productivity.', features: ['Live Attendance Tracking', 'Customizable Reports', 'Leave Management Integration', 'Mobile Check-in Capability', 'Shift Scheduling'] },
         ];
 
@@ -781,53 +821,6 @@
             openModal(modal);
         }
         
-        function setupBannerSlider() {
-            const bannerSwiper = new Swiper('.swiper-container-banner', {
-                loop: true,
-                effect: 'fade',
-                fadeEffect: {
-                    crossFade: true
-                },
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination-banner',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next-banner',
-                    prevEl: '.swiper-button-prev-banner',
-                },
-                on: {
-                    init: function () {
-                        // Animate first slide
-                        const activeSlide = this.slides[this.activeIndex];
-                        const title = activeSlide.querySelector('.banner-title');
-                        const desc = activeSlide.querySelector('.banner-description');
-                        const btn = activeSlide.querySelector('.banner-button');
-                        if (title) gsap.from(title, { opacity: 0, y: 20, duration: 0.8, delay: 0.3 });
-                        if (desc) gsap.from(desc, { opacity: 0, y: 20, duration: 0.8, delay: 0.5 });
-                        if (btn) gsap.from(btn, { opacity: 0, y: 20, duration: 0.8, delay: 0.7 });
-                    },
-                    slideChangeTransitionStart: function () {
-                        // Animate incoming slide
-                        const allContent = this.el.querySelectorAll('.banner-title, .banner-description, .banner-button');
-                        gsap.set(allContent, { opacity: 0, y: 20 });
-                        
-                        const activeSlide = this.slides[this.activeIndex];
-                        const title = activeSlide.querySelector('.banner-title');
-                        const desc = activeSlide.querySelector('.banner-description');
-                        const btn = activeSlide.querySelector('.banner-button');
-                         
-                        if (title) gsap.to(title, { opacity: 1, y: 0, duration: 0.8, delay: 0.4 });
-                        if (desc) gsap.to(desc, { opacity: 1, y: 0, duration: 0.8, delay: 0.6 });
-                        if (btn) gsap.to(btn, { opacity: 1, y: 0, duration: 0.8, delay: 0.8 });
-                    }
-                }
-            });
-        }
 
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');

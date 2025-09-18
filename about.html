@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoding Technologies - Smart, Scalable & Secure Software Solutions</title>
-    <meta name="description" content="Zoding Technologies is a leading software development company specializing in custom web, mobile, and AI solutions. We help businesses transform with cutting-edge technology.">
-    <meta name="keywords" content="software development, web development, mobile apps, AI, machine learning, cybersecurity, Zoding Technologies">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    
-    <!-- Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="main.css" /> 
+  <title>Zoding Technologies | Smart, Scalable & Secure Software Solutions</title>
+  <meta name="description" content="Zoding Technologies is a leading software development company offering scalable web, mobile, and AI solutions. Empowering businesses with innovation and security.">
+
+  <meta name="keywords" content="Zoding Technologies, Zoding, zoding, tech, software development, web development, mobile apps, AI solutions, machine learning, cybersecurity, custom software, IT services, scalable solutions">
+
+  <link rel="icon" href="./imeges/logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="./imeges/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./imeges/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./imeges/logo.png">
+
+  <meta property="og:title" content="Zoding Technologies | Smart, Scalable & Secure Software Solutions">
+  <meta property="og:description" content="Leading software development company specializing in web, mobile, and AI solutions.">
+  <meta property="og:image" content="https://Zoding.com/preview-image.jpg">
+  <meta property="og:url" content="https://Zoding.com">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zoding Technologies | Smart, Scalable & Secure Software Solutions">
+  <meta name="twitter:description" content="Leading software development company specializing in web, mobile, and AI solutions.">
+  <meta name="twitter:image" content="https://Zoding.com/preview-image.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body class="text-gray-800">
 
@@ -93,11 +110,48 @@
 <header id="main-header" class="bg-gray-800/50 fixed top-0 left-0 right-0 z-50 rounded-lg transition-all duration-300">
   <div class="container mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
-      <!-- Logo -->
-      <a href="#home" id="header-logo" class="flex items-center space-x-2 cursor-pointer z-20">
-        <img class="logo" src="./imeges/logo.png" alt="Zoding Logo" style="width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid #2563eb;">
-        <h1 class="text-2xl font-bold text-white">Zoding Technologies</h1>
-      </a>  
+     <!-- Logo Section -->
+<a href="./index.html" id="header-logo" class="flex items-center space-x-2 cursor-pointer z-20">
+  <img class="logo" src="./imeges/logo.png" alt="Zoding Logo"
+    style="width:50px; height:50px; border-radius:50%; object-fit:cover; border:2px solid #2563eb;">
+  <h1 id="company-name" class="text-2xl font-bold text-white"></h1>
+</a>
+
+<!-- Animation Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const companyName = "Zoding Technologies";
+    const target = document.getElementById("company-name");
+    let index = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      if (!isDeleting && index < companyName.length) {
+        target.innerHTML = companyName.substring(0, index + 1);
+        index++;
+        setTimeout(typeEffect, 100);
+      } else if (isDeleting && index > 0) {
+        target.innerHTML = companyName.substring(0, index - 1);
+        index--;
+        setTimeout(typeEffect, 50);
+      } else {
+        isDeleting = !isDeleting;
+        setTimeout(typeEffect, isDeleting ? 1500 : 300); // Pause before typing/deleting
+      }
+    }
+
+    typeEffect();
+  });
+</script>
+
+<!-- Optional Styling -->
+<style>
+  #company-name {
+    display: inline-block;
+    white-space: nowrap;
+    letter-spacing: 2px;
+  }
+</style>
 
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex items-center space-x-6">
@@ -105,7 +159,6 @@
         <a href="about.html" class="nav-link text-white hover:text-blue-600 active">About</a>
         <a href="services.html" class="nav-link text-white hover:text-blue-600">Services</a>
         <a href="products.html" class="nav-link text-white hover:text-blue-600">Products</a>
-        <a href="careers.html" class="nav-link text-white hover:text-blue-600">Careers</a>
         <a href="contact.html" class="nav-link text-white hover:text-blue-600">Contact</a>
       </nav>
 
@@ -124,7 +177,6 @@
     <a href="about.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">About</a>
     <a href="services.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Services</a>
     <a href="products.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Products</a>
-    <a href="careers.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Careers</a>
     <a href="contact.html" class="block py-3 text-lg text-gray-600 hover:text-blue-600">Contact</a>
   </div>
 </header>
@@ -175,9 +227,9 @@
     <footer class="bg-gray-800/60 text-gray-300 rounded-xl py-12 relative z-10">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div><h3 class="text-lg font-bold text-white mb-4">Quick Links</h3><ul class="space-y-2"><li class="hover:text-white"><a href="#home">Home</a></li><li class="hover:text-white"><a href="#about">About</a></li><li class="hover:text-white"><a href="#services">Services</a></li><li class="hover:text-white"><a href="#careers">Careers</a></li><li class="hover:text-white"><a href="#contact">Contact</a></li></ul></div>
+                <div><h3 class="text-lg font-bold text-white mb-4">Quick Links</h3><ul class="space-y-2"><li class="hover:text-white"><a href="./index.html">Home</a></li><li class="hover:text-white"><a href="./about.html">About</a></li><li class="hover:text-white"><a href="./services.html">Services</a></li><li class="hover:text-white"><a href="./contact.html">Contact</a></li></ul></div>
                 <div><h3 class="text-lg font-bold text-white mb-4">Follow Us</h3><div class="flex space-x-4"><a href="#" class="hover:text-white"><i data-feather="linkedin"></i></a><a href="#" class="hover:text-white"><i data-feather="instagram"></i></a></div></div>
-                <div class="md:col-span-2"><h3 class="text-lg font-bold text-white mb-4">Subscribe to our Newsletter</h3><p class="mb-4">Subscribe to get the latest tech updates.</p><form class="flex"><input type="email" placeholder="Your Email" class="w-full p-2 rounded-l-md text-gray-800"><button type="submit" class="btn-gradient text-white px-4 py-2 rounded-r-md">Subscribe</button></form></div>
+                <div class="md:col-span-2"><h3 class="text-lg font-bold text-white mb-4">Subscribe to our Newsletter</h3><p class="mb-4">Subscribe to get the latest tech updates.</p><form class="flex"><input type="email" placeholder="Zodingtechnologies@gmail.com" class="w-full p-2 rounded-l-md text-gray-800"><button type="submit" class="btn-gradient text-white px-4 py-2 rounded-r-md">Subscribe</button></form></div>
             </div>
             <div class="mt-8 border-t border-gray-700 pt-6 text-center text-sm"><p>&copy; 2025 Zoding Technologies. All Rights Reserved.</p></div>
         </div>
